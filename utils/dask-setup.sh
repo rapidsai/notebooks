@@ -1,5 +1,5 @@
 #!/bin/bash
-# export NCCL_P2P_DISABLE=1
+export NCCL_P2P_DISABLE=1
 # export NCCL_SOCKET_IFNAME=ib
 
 export DASK_DISTRIBUTED__SCHEDULER__WORK_STEALING=False
