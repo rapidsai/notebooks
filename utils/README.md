@@ -1,6 +1,6 @@
 # Utility Scripts
 
-## Quick Start
+## Quick Summary
 
 * `conda-create-cudf.sh`: creates a conda environment named `cudf` with all of the requisite software dependencies for [cuDF](https://github.com/rapidsai/cudf)
 * `start-jupyter.sh`: starts a JupyterLab environment for interacting with, and running, notebooks
