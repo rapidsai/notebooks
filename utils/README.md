@@ -76,6 +76,8 @@ This is a Python script used to launch a Dask cluster. A configuration file is p
 ```bash
 notebooks$ cat utils/dask.conf
 
+ENVNAME cudf
+
 NWORKERS 8
 
 12.34.567.890 MASTER
@@ -85,6 +87,7 @@ DASK_SCHED_BOKEH_PORT   8787
 DASK_WORKER_BOKEH_PORT  8790
 ```
 
+* `ENVNAME cudf`: a keyword to tell `dask-cluster.py` the name of the virtual environment where `cudf` is installed
 * `NWORKERS 8`: a keyword to tell `dask-cluster.py` how many workers to instantiate on the node which called `dask-cluster.py`
 * `12.34.567.890 MASTER`: a map of `IP.ADDRESS {WORKER/MASTER}`
 * `DASK_SCHED_PORT         8786`: a keyword to tell `dask-cluster.py` which port is assigned to the Dask scheduler
@@ -95,6 +98,7 @@ DASK_WORKER_BOKEH_PORT  8790
 
 `dask-setup.sh` expect several inputs, and order matters:
 
+* `ENVNAME`: name of the virtual environment where `cudf` is installed
 * `NWORKERS`: number of workers to create
 * `DASK_SCHED_PORT`: port to assign the scheduler
 * `DASK_SCHED_BOKEH_PORT`: port to assign the scheduler's front-end

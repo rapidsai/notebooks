@@ -23,15 +23,18 @@ process = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
 output, error = process.communicate()
 IPADDR = str(output.decode()).split()[0]
 
-NWORKERS = None;
-DASK_SCHED_PORT = None;
-DASK_SCHED_BOKEH_PORT = None;
-DASK_WORKER_BOKEH_PORT = None;
-MASTER_IPADDR = None;
+ENVNAME = None
+NWORKERS = None
+DASK_SCHED_PORT = None
+DASK_SCHED_BOKEH_PORT = None
+DASK_WORKER_BOKEH_PORT = None
+MASTER_IPADDR = None
 WHOAMI = None
 DEBUG = None
 
 for line in dask_conf:
+    if line[0] == "ENVNAME":
+        ENVNAME = line[1]
     if line[0] == "NWORKERS":
         NWORKERS = line[1]
     if line[0] == "DASK_SCHED_PORT":

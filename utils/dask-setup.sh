@@ -5,13 +5,14 @@ export NCCL_P2P_DISABLE=1
 export DASK_DISTRIBUTED__SCHEDULER__WORK_STEALING=False
 export DASK_DISTRIBUTED__SCHEDULER__BANDWIDTH=1
 
-NWORKERS=$1
-DASK_SCHED_PORT=$2
-DASK_SCHED_BOKEH_PORT=$3
-DASK_WORKER_BOKEH_PORT=$4
-MASTER_IPADDR=$5
-WHOAMI=$6
-DEBUG=$7
+ENVNAME=$1
+NWORKERS=$2
+DASK_SCHED_PORT=$3
+DASK_SCHED_BOKEH_PORT=$4
+DASK_WORKER_BOKEH_PORT=$5
+MASTER_IPADDR=$6
+WHOAMI=$7
+DEBUG=$8
 
 DASK_LOCAL_DIR=./.dask
 NUM_GPUS=$(nvidia-smi --list-gpus | wc --lines)
@@ -41,7 +42,7 @@ if [[ "0" -lt "$NWORKERS" ]] && [[ "$NWORKERS" -le "$NUM_GPUS" ]]; then
 
     if [[ "$WHOAMI" = "MASTER" ]]; then
         echo "initializing dask scheduler..."
-        screen -dmS dask_scheduler bash -c "source activate cudf_dev && dask-scheduler"
+        screen -dmS dask_scheduler bash -c "source activate $ENVNAME && dask-scheduler"
         sleep 5
         echo "... scheduler started"
     fi
@@ -63,7 +64,7 @@ if [[ "0" -lt "$NWORKERS" ]] && [[ "$NWORKERS" -le "$NUM_GPUS" ]]; then
     echo "... starting gpu worker $worker_id"
 
     if [[ "$DEBUG" = "DEBUG" ]]; then
-        export create_worker="source activate cudf && \
+        export create_worker="source activate $ENVNAME && \
                               cuda-memcheck dask-worker $MASTER_IPADDR:$DASK_SCHED_PORT \
                                                         --host=${MY_IPADDR[0]} --no-nanny \
                                                         --nprocs=1 --nthreads=1 \
@@ -73,7 +74,7 @@ if [[ "0" -lt "$NWORKERS" ]] && [[ "$NWORKERS" -le "$NUM_GPUS" ]]; then
         env CUDA_VISIBLE_DEVICES=$devs screen -dmS gpu_worker_$worker_id \
                                                    bash -c 'script -c "$create_worker" "$logfile"'
     else
-        export create_worker="source activate cudf && \
+        export create_worker="source activate $ENVNAME && \
                               dask-worker $MASTER_IPADDR:$DASK_SCHED_PORT \
                                           --host=${MY_IPADDR[0]} --no-nanny \
                                           --nprocs=1 --nthreads=1 \
