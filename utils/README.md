@@ -92,3 +92,25 @@ DASK_WORKER_BOKEH_PORT  8790
 * `DASK_WORKER_BOKEH_PORT  8790`: a keyword to tell `dask-cluster.py` which port is assigned to the worker's visual front-end
 
 ## dask-setup
+
+`dask-setup.sh` expect several inputs, and order matters:
+
+* `NWORKERS`: number of workers to create
+* `DASK_SCHED_PORT`: port to assign the scheduler
+* `DASK_SCHED_BOKEH_PORT`: port to assign the scheduler's front-end
+* `DASK_WORKER_BOKEH_PORT`: port to assign the worker's front-end
+* `YOUR.IP.ADDRESS`: machine's IP address
+* `{WORKER/MASTER}`: the node's title
+* `DEBUG`: log-level (optional, case-sensitive)
+
+The script is called like follows:
+
+```bash
+notebooks$ bash utils/dask-setup.sh 8 8786 8787 8790 12.34.567.890 MASTER DEBUG
+```
+
+Note: `DEBUG` is optional. This script was designed to be called by `dask-cluster.py`. It is not meant to be called directly by a user other than to kill all present Dask workers:
+
+```bash
+notebooks$ bash utils/dask-setup.sh 0
+```
