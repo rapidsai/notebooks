@@ -5,7 +5,7 @@ export NCCL_P2P_DISABLE=1
 export DASK_DISTRIBUTED__SCHEDULER__WORK_STEALING=False
 export DASK_DISTRIBUTED__SCHEDULER__BANDWIDTH=1
 
-NWORKERS_PER_NODE=$1
+NWORKERS=$1
 DASK_SCHED_PORT=$2
 DASK_SCHED_BOKEH_PORT=$3
 DASK_WORKER_BOKEH_PORT=$4
@@ -37,7 +37,7 @@ echo "... cluster shut down"
 
 echo -e "\n"
 
-if [[ "0" -lt "$NWORKERS_PER_NODE" ]] && [[ "$NWORKERS_PER_NODE" -le "$NUM_GPUS" ]]; then
+if [[ "0" -lt "$NWORKERS" ]] && [[ "$NWORKERS" -le "$NUM_GPUS" ]]; then
 
     if [[ "$WHOAMI" = "MASTER" ]]; then
         echo "initializing dask scheduler..."
@@ -48,12 +48,12 @@ if [[ "0" -lt "$NWORKERS_PER_NODE" ]] && [[ "$NWORKERS_PER_NODE" -le "$NUM_GPUS"
 
     echo -e "\n"
 
-    echo "starting $NWORKERS_PER_NODE worker(s)..."
+    echo "starting $NWORKERS worker(s)..."
     declare -a WIDS
-    for worker_id in $(seq 1 $NWORKERS_PER_NODE);
+    for worker_id in $(seq 1 $NWORKERS);
     do
     start=$(( worker_id - 1 ))
-    end=$(( NWORKERS_PER_NODE - 1 ))
+    end=$(( NWORKERS - 1 ))
     other=$(( start - 1 ))
     devs=$(seq --separator=, $start $end)
     second=$(seq --separator=, 0 $other)
@@ -89,12 +89,12 @@ if [[ "0" -lt "$NWORKERS_PER_NODE" ]] && [[ "$NWORKERS_PER_NODE" -le "$NUM_GPUS"
 
     echo -e "\n"
 
-    echo "... $NWORKERS_PER_NODE worker(s) successfully started"
+    echo "... $NWORKERS worker(s) successfully started"
 
     echo -e "\n"
 fi
 
-if [[ "$NWORKERS_PER_NODE" -eq "0" ]]; then
+if [[ "$NWORKERS" -eq "0" ]]; then
     NUM_SCREENS=$(screen -list | grep --only-matching --extended-regexp '[0-9]\ Socket|[0-9]{1,10}\ Sockets' | grep --only-matching --extended-regexp '[0-9]{1,10}')
     if [[ $NUM_SCREENS == "" ]]; then
         echo "cluster shut down successfully"
@@ -103,7 +103,7 @@ if [[ "$NWORKERS_PER_NODE" -eq "0" ]]; then
     fi
 fi
 
-if [[ "0" -lt "$NWORKERS_PER_NODE" ]]; then
+if [[ "0" -lt "$NWORKERS" ]]; then
     echo "printing status ..."
     echo -e "\n"
     screen -list

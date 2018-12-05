@@ -23,16 +23,17 @@ process = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE)
 output, error = process.communicate()
 IPADDR = str(output.decode()).split()[0]
 
-NWORKERS_PER_NODE = None;
+NWORKERS = None;
 DASK_SCHED_PORT = None;
 DASK_SCHED_BOKEH_PORT = None;
 DASK_WORKER_BOKEH_PORT = None;
 MASTER_IPADDR = None;
 WHOAMI = None
+DEBUG = None
 
 for line in dask_conf:
-    if line[0] == "NWORKERS_PER_NODE":
-        NWORKERS_PER_NODE = line[1]
+    if line[0] == "NWORKERS":
+        NWORKERS = line[1]
     if line[0] == "DASK_SCHED_PORT":
         DASK_SCHED_PORT = line[1]
     if line[0] == "DASK_SCHED_BOKEH_PORT":
@@ -44,7 +45,7 @@ for line in dask_conf:
     if line[0] == IPADDR:
         WHOAMI = line[1]
 
-cmd = "bash ./dask-setup.sh " + str(NWORKERS_PER_NODE)
+cmd = "bash ./dask-setup.sh " + str(NWORKERS)
 cmd = cmd + " " + str(DASK_SCHED_PORT)
 cmd = cmd + " " + str(DASK_SCHED_BOKEH_PORT)
 cmd = cmd + " " + str(DASK_WORKER_BOKEH_PORT)
