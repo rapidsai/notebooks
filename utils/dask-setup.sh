@@ -11,6 +11,7 @@ DASK_SCHED_BOKEH_PORT=$3
 DASK_WORKER_BOKEH_PORT=$4
 MASTER_IPADDR=$5
 WHOAMI=$6
+DEBUG=$7
 
 DASK_LOCAL_DIR=./.dask
 NUM_GPUS=$(nvidia-smi --list-gpus | wc --lines)
@@ -60,18 +61,28 @@ if [[ "0" -lt "$NWORKERS_PER_NODE" ]] && [[ "$NWORKERS_PER_NODE" -le "$NUM_GPUS"
         devs="$devs,$second"
     fi
     echo "... starting gpu worker $worker_id"
-    # change the following command to read "... cuda-memcheck dask-worker ..." for debugging
-    export create_worker="source activate cudf_dev && \
-                          dask-worker $MASTER_IPADDR:$DASK_SCHED_PORT \
-                                      --host=${MY_IPADDR[0]} --no-nanny \
-                                      --nprocs=1 --nthreads=1 \
-                                      --memory-limit=0 --name ${MY_IPADDR[0]}_gpu_$worker_id \
-                                      --local-directory $DASK_LOCAL_DIR/$name"
-    # the following specifies the location for the log files ... uncomment for debugging
-    # export logfile="${DASK_LOCAL_DIR}/gpu_worker_${worker_id}_log.txt"
-    env CUDA_VISIBLE_DEVICES=$devs screen -dmS gpu_worker_$worker_id \
-                                   bash -c "$create_worker"
-                                   # bash -c 'script -c "$create_worker" "$logfile"' # uncomment this line for debugging
+
+    if [[ "$DEBUG" = "DEBUG" ]]; then
+        export create_worker="source activate cudf && \
+                              cuda-memcheck dask-worker $MASTER_IPADDR:$DASK_SCHED_PORT \
+                                                        --host=${MY_IPADDR[0]} --no-nanny \
+                                                        --nprocs=1 --nthreads=1 \
+                                                        --memory-limit=0 --name ${MY_IPADDR[0]}_gpu_$worker_id \
+                                                        --local-directory $DASK_LOCAL_DIR/$name"
+        export logfile="${DASK_LOCAL_DIR}/gpu_worker_${worker_id}_log.txt"
+        env CUDA_VISIBLE_DEVICES=$devs screen -dmS gpu_worker_$worker_id \
+                                                   bash -c 'script -c "$create_worker" "$logfile"'
+    else
+        export create_worker="source activate cudf && \
+                              dask-worker $MASTER_IPADDR:$DASK_SCHED_PORT \
+                                          --host=${MY_IPADDR[0]} --no-nanny \
+                                          --nprocs=1 --nthreads=1 \
+                                          --memory-limit=0 --name ${MY_IPADDR[0]}_gpu_$worker_id \
+                                          --local-directory $DASK_LOCAL_DIR/$name"
+        env CUDA_VISIBLE_DEVICES=$devs screen -dmS gpu_worker_$worker_id \
+                                                   bash -c "$create_worker"
+    fi
+
     WIDS[$id]=$!
     done
     sleep 5
