@@ -1,6 +1,6 @@
 import subprocess
 
-dask_conf_path = "./dask.conf"
+dask_conf_path = "../utils/dask.conf"
 with open(dask_conf_path, "r") as file:
 	dask_conf = file.read()
 
@@ -11,7 +11,7 @@ for i, line in enumerate(_dask_conf):
 	if 0 < len(line):
 		dask_conf.append(line)
 
-cmd = "bash ./dask-setup.sh 0"
+cmd = "bash ../utils/dask-setup.sh 0"
 
 print(cmd)
 
@@ -45,7 +45,7 @@ for line in dask_conf:
     if line[0] == IPADDR:
         WHOAMI = line[1]
 
-cmd = "bash ./dask-setup.sh " + str(NWORKERS)
+cmd = "bash ../utils/dask-setup.sh " + str(NWORKERS)
 cmd = cmd + " " + str(DASK_SCHED_PORT)
 cmd = cmd + " " + str(DASK_SCHED_BOKEH_PORT)
 cmd = cmd + " " + str(DASK_WORKER_BOKEH_PORT)
