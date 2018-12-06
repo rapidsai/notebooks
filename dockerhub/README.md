@@ -112,7 +112,9 @@ Note: the entire mortgage dataset is 68 quarters, broken into 112 parts so that 
 
 ## Useful Tips and Tools for Monitoring and Debugging
 
-*   The Dask Dashboard. This cell from the notebook
+### The Dask Dashboard. 
+
+This cell from the notebook
 
     import subprocess
 
@@ -141,7 +143,7 @@ Note: clicking `Dashboard: http://172.17.0.3:8787/status`  may not work. The IP 
 
 Once there, you can look at active processes, view the (delayed) task graph, and read through individual worker logs.
 
-*   Individual Worker Logs
+### Individual Worker Logs
 
 When you hit an unusual error, there are often traces of the error in the individual worker logs accessible from the Dashboard status page (see above). CUDA out-of-memory errors will show up here.
 
@@ -149,35 +151,19 @@ When you hit an unusual error, there are often traces of the error in the indivi
 
 ## Common Errors
 
-*   Running out of device memory
+### Running out of device memory
 
-    *   ETL processes may involve creating many copies of data in device memory, resulting in sporadic spikes of memory utilization
+ETL processes may involve creating many copies of data in device memory, resulting in sporadic spikes of memory utilization. Memory utilization which exceeds available device resources will cause the worker to crash.
 
-        *   Memory utilization which exceeds available device resources will cause the worker to crash
-        *   Because we've disabled experimental features that would enable the worker to recover, restart its work, or share its work with other workers, the error is silently propagated forward in the Dask's delayed task graph. This can manifest itself in the form of unusually short ETL times (sub-millisecond timescale)
-        *   An error may be raised by another routine referring to `NoneType` in `data` or similar
-        *   Note: it is possible to enable these _experimental_ features by changing the Dask `export` parameters in the `/rapids/utils/dask-setup.sh`:
+Because we have disabled experimental features that would enable the worker to recover, restart its work, or share its work with other workers, the error is silently propagated forward in the Dask's delayed task graph. This can manifest itself in the form of unusually short ETL times (sub-millisecond timescale).
 
-                  export DASK_DISTRIBUTED__SCHEDULER__WORK_STEALING=False -> # export DASK_DISTRIBUTED__SCHEDULER__WORK_STEALING=False
-                  export DASK_DISTRIBUTED__SCHEDULER__BANDWIDTH=1 -> # export DASK_DISTRIBUTED__SCHEDULER__BANDWIDTH=1
+An error may be raised by another routine referring to `NoneType` in `data` or similar
 
-            and by removing the `--no-nanny` option in the `dask-worker` command:
+Training processes need a certain amount of available memory to expand throughout processing. With XGBoost, the overhead is typically 25% of available device memory. This means that we cannot exceed 24GB of memory utilization on a 32GB GPU, or 12GB of memory utilization on a 16GB GPU.
 
-                  bash -c "source activate gdf && \
-                      dask-worker $MASTER_IPADDR:$DASK_SCHED_PORT \
-                                  --host=${MY_IPADDR[0]} --no-nanny \ -> --host=${MY_IPADDR[0]} \ 
-                                  --nprocs=1 --nthreads=1 \
-                                  --memory-limit=0 --name ${MY_IPADDR[0]}_gpu_$worker_id \
-                                  --local-directory $DASK_LOCAL_DIR/$name"
+### Running out of system memory
 
-            More dedicated support for these features is coming in a future release.
-
-    *   Training processes need a certain amount of available memory to expand throughout processing
-        *   With XGBoost, the overhead is typically 25% of available device memory. This means that we cannot exceed 24GB of memory utilization on a 32GB GPU, or 12GB of memory utilization on a 16GB GPU
-*   Running out of system memory
-
-    *   The final step of the ETL process migrates all computed results back to system memory before training, and if you do not have sufficient system memory, your program will crash
-    *   The step before training migrates a portion of the data back into device memory for XGBoost to train against
+The final step of the ETL process migrates all computed results back to system memory before training, and if you do not have sufficient system memory, your program will crash. The step before training migrates a portion of the data back into device memory for XGBoost to train against.
 
 * * *
 
