@@ -1,6 +1,6 @@
 # Utility Scripts
 
-## Quick Summary
+## Summary
 
 * `start-jupyter.sh`: starts a JupyterLab environment for interacting with, and running, notebooks
 * `stop-jupyter.sh`: identifies all process IDs associated with Jupyter and kills them
