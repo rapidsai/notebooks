@@ -49,7 +49,7 @@ The RAPIDS suite of software libraries gives you the freedom to execute end-to-e
                 -p 8888:8888 \
                 -p 8787:8787 \
                 -p 8786:8786 \
-                rapidsai/rapidsai:ubuntu1604_cuda92_py35
+                rapidsai/rapidsai:cuda9.2_ubuntu1604
 
 2.  Activate the `rapids` conda environment:
 
@@ -77,7 +77,7 @@ You are free to modify the above steps. For example, you can launch an interacti
                -p 8787:8787 \
                -p 8786:8786 \
                -v /path/to/host/data:/rapids/my_data
-               rapidsai/rapidsai:ubuntu1604_cuda92_py35
+               rapidsai/rapidsai:cuda9.2_ubuntu1604
 
 This will map data from your host operating system to the container OS in the `/rapids/my_data` directory. You may need to modify the provided notebooks for the new data paths. 
 
