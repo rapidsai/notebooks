@@ -87,7 +87,7 @@ You can check the documentation for RAPIDS APIs inside the JupyterLab notebook u
 
 This prints the function signature and its usage documentation. If this is not enough, you can see the full code for the function using `??`:
 
-    [1] ??pygdf.read_csv
+    [1] ??cudf.read_csv
 
 Check out the RAPIDS [documentation](http://rapids.ai/documentation.html) for more detailed information.
 
