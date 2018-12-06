@@ -2,10 +2,10 @@
 
 ## Summary
 
-* `dbscan_demo`: Notebook showcasing density-based spatial clustering of applications with noise (dbscan) algorithm comparison between cuML and scikit-learn.
-* `knn_demo`: Notebook showcasing k-nearest neighbors (knn) algorithm comparison between cuML and scikit-learn.
-* `pca_demo`: Notebook showcasing principal component analysis (PCA) algorithm comparison between cuML and scikit-learn.
-* `dask-setup.sh`: Notebook showcasing truncated singular value decomposition (tsvd) algorithm comparison between cuML and scikit-learn.
+* `dbscan_demo`: notebook showcasing density-based spatial clustering of applications with noise (dbscan) algorithm comparison between cuML and scikit-learn.
+* `knn_demo`: notebook showcasing k-nearest neighbors (knn) algorithm comparison between cuML and scikit-learn.
+* `pca_demo`: notebook showcasing principal component analysis (PCA) algorithm comparison between cuML and scikit-learn.
+* `dask-setup.sh`: notebook showcasing truncated singular value decomposition (tsvd) algorithm comparison between cuML and scikit-learn.
 
 ## dbscan_demo
 
@@ -33,7 +33,7 @@ Note that the timing differences depend upon the exact dataset being used. Also,
 
 ## knn_demo
 
-The knn_demo notebook showcases the connection that cuML provides between `cuDF` and `faiss-gpu`. Currently, it is supported to run without any additional steps for CUDA 9.2, but it requires building `faiss-gpu` from source for CUDA 10.0 with [GPU support](https://github.com/facebookresearch/faiss/blob/master/INSTALL.md).
+The `knn_demo` notebook demonstrates how cuml establishes interoperability between `cudf` and `faiss-gpu`. There is native support for this demo with CUDA 9.2. With CUDA 10.0, the user must build `faiss-gpu` from source with [GPU support](https://github.com/facebookresearch/faiss/blob/master/INSTALL.md).
 
 Typical output of the cells processing knn looks like:
 
