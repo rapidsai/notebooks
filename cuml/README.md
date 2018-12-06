@@ -56,7 +56,7 @@ compare knn: cuml vs sklearn distances equal
 compare knn: cuml vs sklearn indexes NOT equal
 ```
 
-Note that the indexes can differ currently between cuML and scikit-learn.
+Note that the indexes can differ currently between results, but distances should be equal.
 
 ## pca_demo
 
