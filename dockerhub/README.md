@@ -1,4 +1,4 @@
-## Real-time Acceleration Platform for Integrated Data Science
+## RAPIDS - Open GPU Data Science
 
 * * *
 
