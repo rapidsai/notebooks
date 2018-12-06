@@ -5,7 +5,7 @@
 * `start-jupyter.sh`: starts a JupyterLab environment for interacting with, and running, notebooks
 * `stop-jupyter.sh`: identifies all process IDs associated with Jupyter and kills them
 * `dask-cluster.py`: launches a configured Dask cluster (a set of nodes) for use within a notebook
-* `dask-setup.sh`: a low-level script for constructing a set of Dask workers on a single node ... **do not use this script directly**
+* `dask-setup.sh`: a low-level script for constructing a set of Dask workers on a single node
 
 ## start-jupyter
 
@@ -71,7 +71,7 @@ DEBUG
 
 ## dask-setup
 
-`dask-setup.sh` expect several inputs, and order matters:
+`dask-setup.sh` expects several inputs, and order matters:
 
 * `ENVNAME`: name of the virtual environment where `cudf` is installed
 * `NWORKERS`: number of workers to create
@@ -82,7 +82,7 @@ DEBUG
 * `{WORKER/MASTER}`: the node's title
 * `DEBUG`: log-level (optional, case-sensitive)
 
-The script is called like follows:
+The script is called as follows:
 
 ```bash
 notebooks$ bash utils/dask-setup.sh 8 8786 8787 8790 12.34.567.890 MASTER DEBUG
