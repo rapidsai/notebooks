@@ -85,6 +85,8 @@ NWORKERS 8
 DASK_SCHED_PORT         8786
 DASK_SCHED_BOKEH_PORT   8787
 DASK_WORKER_BOKEH_PORT  8790
+
+DEBUG
 ```
 
 * `ENVNAME cudf`: a keyword to tell `dask-cluster.py` the name of the virtual environment where `cudf` is installed
@@ -93,6 +95,7 @@ DASK_WORKER_BOKEH_PORT  8790
 * `DASK_SCHED_PORT         8786`: a keyword to tell `dask-cluster.py` which port is assigned to the Dask scheduler
 * `DASK_SCHED_BOKEH_PORT   8787`: a keyword to tell `dask-cluster.py` which port is assigned to the scheduler's visual front-end
 * `DASK_WORKER_BOKEH_PORT  8790`: a keyword to tell `dask-cluster.py` which port is assigned to the worker's visual front-end
+* `DEBUG`: a keyword to tell `dask-cluster.py` to launch all Dask workers to set the log-level to DEBUG
 
 ## dask-setup
 

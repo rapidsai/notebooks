@@ -47,13 +47,18 @@ for line in dask_conf:
         MASTER_IPADDR = line[0]
     if line[0] == IPADDR:
         WHOAMI = line[1]
+    if line[0] == "DEBUG"
+        DEBUG = "DEBUG"
 
-cmd = "bash ../utils/dask-setup.sh " + str(NWORKERS)
+cmd = "bash ../utils/dask-setup.sh " + str(ENVNAME)
+cmd = cmd + " " + str(NWORKERS)
 cmd = cmd + " " + str(DASK_SCHED_PORT)
 cmd = cmd + " " + str(DASK_SCHED_BOKEH_PORT)
 cmd = cmd + " " + str(DASK_WORKER_BOKEH_PORT)
 cmd = cmd + " " + str(MASTER_IPADDR)
 cmd = cmd + " " + str(WHOAMI)
+if DEBUG != None:
+    cmd = cmd + " " + str(DEBUG)
 
 print(cmd)
 
