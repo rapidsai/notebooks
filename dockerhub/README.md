@@ -169,4 +169,4 @@ The final step of the ETL process migrates all computed results back to system m
 
 ## Where can I get help or file bugs/requests?
 
-Please submit issues with the container to this GitHub repository: [https://github.com/rapidsai/cudf](https://github.com/rapidsai/cudf)
+Please submit issues with the container to this GitHub repository: [https://github.com/rapidsai/demos](https://github.com/rapidsai/demos/issues/new)
