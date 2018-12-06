@@ -61,7 +61,7 @@ The RAPIDS suite of software libraries gives you the freedom to execute end-to-e
 
 4.  Launch the JupyterLab environment with
 
-        bash /rapids/utils/start_jupyter.sh
+        bash /rapids/notebooks/utils/start_jupyter.sh
 
 5.  Open your web browser, and navigate to  
     `{IPADDR}:8888` (e.g.) `12.34.567.89:8888`  
