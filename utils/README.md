@@ -8,33 +8,6 @@
 * `dask-cluster.py`: launches a configured Dask cluster (a set of nodes) for use within a notebook
 * `dask-setup.sh`: a low-level script for constructing a set of Dask workers on a single node ... **do not use this script directly**
 
-## conda-create-cudf
-
-Typical output (suppressing package plans) will be of the following form:
-
-```bash
-notebooks$ bash utils/conda-create-cudf.sh
-
-attempting to remove current conda environment cudf
-
-Remove all packages in environment /conda/envs/cudf:
-
-...
-
-creating dev environment for cudf
-
-...
-
-successfully created environment cudf
-
-```
-
-Activate the dev environment with 
-
-```bash
-$ source activate cudf
-```
-
 ## start-jupyter
 
 Typical output for `start-jupyter.sh` will be of the following form:
