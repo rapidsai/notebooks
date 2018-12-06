@@ -55,7 +55,7 @@ The RAPIDS suite of software libraries gives you the freedom to execute end-to-e
 
         source activate rapids
 
-3.  Download the mortgage dataset, following the instructions provided at https://rapidsai.github.io/demos/docs/datasets/2018-12-05-mortgage-dataset/
+3.  Download the mortgage dataset, following the instructions provided at https://rapidsai.github.io/demos/datasets/mortgage-data
 
     You will need to update paths and years in the notebook (see below) depending on which subset of the mortgage data you download and where you install it.
 
