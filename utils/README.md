@@ -74,6 +74,12 @@ LOG DEBUG
 
 ## dask-setup
 
+`dask-setup.sh` is designed to be called by `dask-cluster.py`. It is not meant to be called directly by a user other than to kill all present Dask workers:
+
+```bash
+notebooks$ bash utils/dask-setup.sh 0
+```
+
 `dask-setup.sh` expects several inputs, and order matters:
 
 * `ENVNAME`: name of the virtual environment where `cudf` is installed
@@ -92,8 +98,4 @@ The script is called as follows:
 notebooks$ bash utils/dask-setup.sh 8 8786 8787 8790 12.34.567.890 MASTER DEBUG
 ```
 
-Note: `LOG` is an optional argument. This script was designed to be called by `dask-cluster.py`. It is not meant to be called directly by a user other than to kill all present Dask workers:
-
-```bash
-notebooks$ bash utils/dask-setup.sh 0
-```
+Note: `LOG` is an optional argument.
