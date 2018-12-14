@@ -50,6 +50,8 @@ notebooks$ cat utils/dask.conf
 
 ENVNAME cudf
 
+ARCH GPU
+
 NWORKERS 8
 
 12.34.567.890 MASTER
@@ -58,29 +60,37 @@ DASK_SCHED_PORT         8786
 DASK_SCHED_BOKEH_PORT   8787
 DASK_WORKER_BOKEH_PORT  8790
 
-DEBUG
+LOG DEBUG
 ```
 
 * `ENVNAME cudf`: a keyword to tell `dask-cluster.py` the name of the virtual environment where `cudf` is installed
+* `ARCH GPU`: a keyword to tell `dask-cluster.py` to instantiate GPU workers (or CPU workers if `CPU` is given)
 * `NWORKERS 8`: a keyword to tell `dask-cluster.py` how many workers to instantiate on the node which called `dask-cluster.py`
 * `12.34.567.890 MASTER`: a map of `IP.ADDRESS {WORKER/MASTER}`
 * `DASK_SCHED_PORT         8786`: a keyword to tell `dask-cluster.py` which port is assigned to the Dask scheduler
 * `DASK_SCHED_BOKEH_PORT   8787`: a keyword to tell `dask-cluster.py` which port is assigned to the scheduler's visual front-end
 * `DASK_WORKER_BOKEH_PORT  8790`: a keyword to tell `dask-cluster.py` which port is assigned to the worker's visual front-end
-* `DEBUG`: a keyword to tell `dask-cluster.py` to launch all Dask workers with log-level set to DEBUG
+* `LOG DEBUG`: a keyword to tell `dask-cluster.py` to launch all Dask workers with log-level set to DEBUG (or INFO if `INFO` is given)
 
 ## dask-setup
+
+`dask-setup.sh` is designed to be called by `dask-cluster.py`. It is not meant to be called directly by a user other than to kill all present Dask workers:
+
+```bash
+notebooks$ bash utils/dask-setup.sh 0
+```
 
 `dask-setup.sh` expects several inputs, and order matters:
 
 * `ENVNAME`: name of the virtual environment where `cudf` is installed
+* `ARCH`: type of workers to create (`CPU` or `GPU`)
 * `NWORKERS`: number of workers to create
 * `DASK_SCHED_PORT`: port to assign the scheduler
 * `DASK_SCHED_BOKEH_PORT`: port to assign the scheduler's front-end
 * `DASK_WORKER_BOKEH_PORT`: port to assign the worker's front-end
 * `YOUR.IP.ADDRESS`: machine's IP address
 * `{WORKER/MASTER}`: the node's title
-* `DEBUG`: log-level (optional, case-sensitive)
+* `LOG`: log-level (optional, case-sensitive). Valid entries include `INFO`, `DEBUG`
 
 The script is called as follows:
 
@@ -88,8 +98,4 @@ The script is called as follows:
 notebooks$ bash utils/dask-setup.sh 8 8786 8787 8790 12.34.567.890 MASTER DEBUG
 ```
 
-Note: `DEBUG` is optional. This script was designed to be called by `dask-cluster.py`. It is not meant to be called directly by a user other than to kill all present Dask workers:
-
-```bash
-notebooks$ bash utils/dask-setup.sh 0
-```
+Note: `LOG` is an optional argument.

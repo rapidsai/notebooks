@@ -5,7 +5,7 @@
 * `dbscan_demo`: notebook showcasing density-based spatial clustering of applications with noise (dbscan) algorithm comparison between cuML and scikit-learn.
 * `knn_demo`: notebook showcasing k-nearest neighbors (knn) algorithm comparison between cuML and scikit-learn.
 * `pca_demo`: notebook showcasing principal component analysis (PCA) algorithm comparison between cuML and scikit-learn.
-* `dask-setup.sh`: notebook showcasing truncated singular value decomposition (tsvd) algorithm comparison between cuML and scikit-learn.
+* `tsvd_demo`: notebook showcasing truncated singular value decomposition (tsvd) algorithm comparison between cuML and scikit-learn.
 
 ## dbscan_demo
 
