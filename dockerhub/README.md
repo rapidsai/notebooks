@@ -61,7 +61,7 @@ The RAPIDS suite of software libraries gives you the freedom to execute end-to-e
 
 4.  Launch the JupyterLab environment with
 
-        bash /rapids/utils/start_jupyter.sh
+        bash /rapids/notebooks/utils/start_jupyter.sh
 
 5.  Open your web browser, and navigate to  
     `{IPADDR}:8888` (e.g.) `12.34.567.89:8888`  
@@ -87,7 +87,7 @@ You can check the documentation for RAPIDS APIs inside the JupyterLab notebook u
 
 This prints the function signature and its usage documentation. If this is not enough, you can see the full code for the function using `??`:
 
-    [1] ??pygdf.read_csv
+    [1] ??cudf.read_csv
 
 Check out the RAPIDS [documentation](http://rapids.ai/documentation.html) for more detailed information.
 
