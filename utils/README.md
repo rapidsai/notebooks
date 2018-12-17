@@ -105,5 +105,3 @@ Note: `LOG` is an optional argument.
 
 `split-data-mortgage.sh` is designed to accept a single argument: `SIZE`. `SIZE` is an integral value specifying the target partition file size. Because this script uses `split`, `SIZE` may also have units (K, M, G, T, P, E, Z, Y ... powers of 1024; KB, MB, ... powers of 1000) (e.g.) `10K == 10 * 1024`
 
-The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
-Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
