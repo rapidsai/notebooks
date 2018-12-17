@@ -6,6 +6,7 @@
 * `stop-jupyter.sh`: identifies all process IDs associated with Jupyter and kills them
 * `dask-cluster.py`: launches a configured Dask cluster (a set of nodes) for use within a notebook
 * `dask-setup.sh`: a low-level script for constructing a set of Dask workers on a single node
+* `split-data-mortgage.sh`: splits the mortgage files into smaller parts, and saves them for use with the mortgage notebook
 
 ## start-jupyter
 
@@ -99,3 +100,10 @@ notebooks$ bash utils/dask-setup.sh 8 8786 8787 8790 12.34.567.890 MASTER DEBUG
 ```
 
 Note: `LOG` is an optional argument.
+
+## split-data-mortgage
+
+`split-data-mortgage.sh` is designed to accept a single argument: `SIZE`. `SIZE` is an integral value specifying the target partition file size. Because this script uses `split`, `SIZE` may also have units (K, M, G, T, P, E, Z, Y ... powers of 1024; KB, MB, ... powers of 1000) (e.g.) `10K == 10 * 1024`
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y (powers of 1024) or KB,MB,... (powers of 1000).
