@@ -1,5 +1,7 @@
 #!/bin/bash
+
 echo -e "\n"
-echo "jupyter-lab --allow-root --ip=0.0.0.0 --no-browser --NotebookApp.token=''"
+echo "nohup jupyter-lab --allow-root --ip=0.0.0.0 --no-browser --NotebookApp.token='' > /dev/null 2>&1 &"
 echo -e "\n"
-jupyter-lab --allow-root --ip=0.0.0.0 --no-browser --NotebookApp.token=''
+
+nohup jupyter-lab --allow-root --ip=0.0.0.0 --no-browser --NotebookApp.token='' > /dev/null 2>&1 &
