@@ -6,7 +6,7 @@
 * `stop-jupyter.sh`: identifies all process IDs associated with Jupyter and kills them
 * `dask-cluster.py`: launches a configured Dask cluster (a set of nodes) for use within a notebook
 * `dask-setup.sh`: a low-level script for constructing a set of Dask workers on a single node
-* `split-data-mortgage.sh`: splits the mortgage files into smaller parts, and saves them for use with the mortgage notebook
+* `split-data-mortgage.sh`: splits mortgage data files into smaller parts, and saves them for use with the mortgage notebook
 
 ## start-jupyter
 
