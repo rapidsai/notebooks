@@ -111,9 +111,10 @@ You must update the paths to data near the beginning of the script:
 #!/bin/bash
 set -e
 
-SRC="/path/to/mortgage/perf_old"
-DST="/path/to/mortgage/perf_new"
+SRC="/path/to/mortgage/perf"
+DST="/path/to/mortgage/perf_split"
 WORK="/path/to/mortgage/"
+...
 ```
 
 * `SRC`: path to the original mortgage data files

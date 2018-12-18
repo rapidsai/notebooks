@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-SRC="/path/to/mortgage/perf_old"
-DST="/path/to/mortgage/perf_new"
+SRC="/path/to/mortgage/perf"
+DST="/path/to/mortgage/perf_split"
 WORK="/path/to/mortgage/"
 
 if [ $# -ne 1 ]; then
