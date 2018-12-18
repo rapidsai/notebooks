@@ -91,7 +91,7 @@ notebooks$ bash utils/dask-setup.sh 0
 * `DASK_WORKER_BOKEH_PORT`: port to assign the worker's front-end
 * `YOUR.IP.ADDRESS`: machine's IP address
 * `{WORKER/MASTER}`: the node's title
-* `LOG`: log-level (optional, case-sensitive). Valid entries include `INFO`, `DEBUG`
+* `LOG`: log-level (optional, case-sensitive). Valid entries include `INFO`, `DEBUG`, `NONE`
 
 The script is called as follows:
 
