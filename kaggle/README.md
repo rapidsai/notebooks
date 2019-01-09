@@ -1,7 +1,8 @@
 ## <div align="left"><img src="img/rapids_logo.png" width="265px"/></div> Open GPU Data Science
 
 # Introduction
-This repo contains 8th place [Rapids.ai](https://rapids.ai) solution of [PLAsTiCC Astronomical Classification](https://www.kaggle.com/c/PLAsTiCC-2018). 
+This repo contains rapids solutions for kaggle competitions.
+1. rapids\_lsst\_demo.ipynb: 8th place [Rapids.ai](https://rapids.ai) solution of [PLAsTiCC Astronomical Classification](https://www.kaggle.com/c/PLAsTiCC-2018).  
 
 # Setup
 ## Requirement
@@ -18,13 +19,3 @@ $ pip install scikit-learn
 $ conda install jupyter notebook
 ```
 
-# Rapids demo notebook
-```bash
-$ cd notebooks
-$ jupyter notebook
-$ rapids_lsst_demo.ipynb
-```
-
-## to be continued.
-
-<p align="center"><img src="img/solution.png" width="80%"/></p>
