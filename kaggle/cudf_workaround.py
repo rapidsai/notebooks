@@ -3,7 +3,12 @@ import numpy as np
 from numba import cuda,jit,float32
 import math
 TPB = 32 # threads per block, multiples of 32 in general
-TPB1 = TPB+1 # trick to reuse shared memory
+
+def rename_col(df, oldcol, newcol):
+    df[newcol] = df[oldcol]
+    df.drop_column(oldcol)
+    return df
+
 @cuda.jit(device=True) 
 def initialize(array,value,N):
     # N<=len(array)
@@ -40,7 +45,29 @@ def compute_mean(array,mean):
     reduction_sum_SM(mean)
     if tid == 0: 
         mean[0]/=len(array)
-    
+    cuda.syncthreads()
+
+@cuda.jit(device=True)
+def compute_first(array,cache):
+    # cache is a shared memory array
+    # the kernel has only one TB
+    # the final result is in cache[0]
+    tid = cuda.threadIdx.x
+    if tid == 0:
+        cache[0] = array[0]
+    cuda.syncthreads()
+
+@cuda.jit(device=True)
+def compute_last(array,cache):
+    # cache is a shared memory array
+    # the kernel has only one TB
+    # the final result is in cache[0]
+    tid = cuda.threadIdx.x
+    if tid == 0:
+        N = len(array)-1
+        cache[0] = array[N]
+    cuda.syncthreads()
+ 
 @cuda.jit(device=True)
 def compute_std_with_mean(array,std,mean):
     # std is a shared memory array
@@ -59,19 +86,24 @@ def compute_std_with_mean(array,std,mean):
 
     reduction_sum_SM(std)
     if tid == 0:
-        std[0] = math.sqrt(std[0]/(len(array)-1))
+        if len(array)>1:
+            std[0] = math.sqrt(std[0]/(len(array)-1))
+        else:
+            std[0] = 0
     cuda.syncthreads()
 
 @cuda.jit(device=True)
 def compute_skew_with_mean(array,skew,mean):
     # skew is a shared memory array
     # mean is a scaler, the mean value of array
-    # len(skew) == TPB+2
+    # len(skew) == TPB
     # the kernel has only one TB
     # the final result is in skew[0]
     tid = cuda.threadIdx.x
     initialize(skew,0,len(skew))
     cuda.syncthreads()
+
+    m2 = 0 # 2nd moment
 
     tid = cuda.threadIdx.x
     for i in range(cuda.threadIdx.x, len(array), cuda.blockDim.x):
@@ -80,10 +112,10 @@ def compute_skew_with_mean(array,skew,mean):
 
     reduction_sum_SM(skew)
     if tid == 0:
-        skew[TPB] = skew[0]/(len(array))
+        m2 = skew[0]/(len(array))
     cuda.syncthreads()
 
-    initialize(skew,0,TPB)
+    initialize(skew,0,len(skew))
     cuda.syncthreads()
 
     for i in range(cuda.threadIdx.x, len(array), cuda.blockDim.x):
@@ -94,7 +126,6 @@ def compute_skew_with_mean(array,skew,mean):
     if tid == 0:
         n = len(array)
         m3 = skew[0]/(len(array))
-        m2 = skew[TPB]
         if m2>0 and n>2:
             skew[0] = math.sqrt((n-1.0)*n)/(n-2.0)*m3/m2**1.5
         else:
@@ -105,13 +136,14 @@ def compute_skew_with_mean(array,skew,mean):
 def compute_kurtosis_with_mean(array,skew,mean):
     # skew is a shared memory array
     # mean is a scaler, the mean value of array
-    # len(skew) == TPB+2
+    # len(skew) == TPB
     # the kernel has only one TB
     # the final result is in skew[0]
     tid = cuda.threadIdx.x
     initialize(skew,0,len(skew))
     cuda.syncthreads()
 
+    m2 = 0
     tid = cuda.threadIdx.x
     for i in range(cuda.threadIdx.x, len(array), cuda.blockDim.x):
         skew[tid] += (array[i]-mean)**2
@@ -119,10 +151,10 @@ def compute_kurtosis_with_mean(array,skew,mean):
 
     reduction_sum_SM(skew)
     if tid == 0:
-        skew[TPB] = skew[0]/(len(array))
+        m2 = skew[0]/(len(array))
     cuda.syncthreads()
 
-    initialize(skew,0,TPB)
+    initialize(skew,0,len(skew))
     cuda.syncthreads()
 
     for i in range(cuda.threadIdx.x, len(array), cuda.blockDim.x):
@@ -133,7 +165,6 @@ def compute_kurtosis_with_mean(array,skew,mean):
     if tid == 0:
         n = len(array)
         m4 = skew[0]/(len(array))
-        m2 = skew[TPB]
         #skew[0] = math.sqrt((n-1.0)*n)/(n-2.0)*m3/m2**1.5
         if n>3 and m2>0:
             skew[0] = 1.0/(n-2)/(n-3)*((n*n-1.0)*m4/m2**2.0-3*(n-1)**2.0)
@@ -144,34 +175,34 @@ def compute_kurtosis_with_mean(array,skew,mean):
 @cuda.jit(device=True)
 def compute_std(array,std):
     # std is a shared memory array
-    # len(std) == TPB+1
+    # len(std) == TPB
     # the kernel has only one TB
     # the final result is in std[0]
     compute_mean(array,std)
-    std[TPB] = std[0]
-    mean = std[TPB]
+    mean = std[0]
+    cuda.syncthreads()
     compute_std_with_mean(array,std,mean)
 
 @cuda.jit(device=True)
 def compute_skew(array,skew):
     # std is a shared memory array
-    # len(std) == TPB+1
+    # len(std) == TPB
     # the kernel has only one TB
     # the final result is in std[0]
     compute_mean(array,skew)
-    skew[TPB] = skew[0]
-    mean = skew[TPB]
+    mean = skew[0]
+    #cuda.syncthreads()
     compute_skew_with_mean(array,skew,mean)
 
 @cuda.jit(device=True)
 def compute_kurtosis(array,skew):
     # std is a shared memory array
-    # len(std) == TPB+1
+    # len(std) == TPB
     # the kernel has only one TB
     # the final result is in std[0]
     compute_mean(array,skew)
-    skew[TPB] = skew[0]
-    mean = skew[TPB]
+    mean = skew[0]
+    #cuda.syncthreads()
     compute_kurtosis_with_mean(array,skew,mean)
 
 @cuda.jit
@@ -184,7 +215,7 @@ def compute_mean_kernel(array,out):
 
 @cuda.jit
 def compute_std_kernel(array,out):
-    std = cuda.shared.array(shape=(TPB1), dtype=float32)
+    std = cuda.shared.array(shape=(TPB), dtype=float32)
     compute_std(array,std)
     if cuda.threadIdx.x==0:
         out[0] = std[0]
@@ -192,7 +223,7 @@ def compute_std_kernel(array,out):
 
 @cuda.jit
 def compute_skew_kernel(array,out):
-    skew = cuda.shared.array(shape=(TPB1), dtype=float32)
+    skew = cuda.shared.array(shape=(TPB), dtype=float32)
     compute_skew(array,skew)
     if cuda.threadIdx.x==0:
         out[0] = skew[0]
@@ -200,7 +231,7 @@ def compute_skew_kernel(array,out):
 
 @cuda.jit
 def compute_kurtosis_kernel(array,out):
-    skew = cuda.shared.array(shape=(TPB1), dtype=float32)
+    skew = cuda.shared.array(shape=(TPB), dtype=float32)
     compute_kurtosis(array,skew)
     if cuda.threadIdx.x==0:
         out[0] = skew[0]
@@ -208,31 +239,45 @@ def compute_kurtosis_kernel(array,out):
 
 @cuda.jit(device=True)
 def gd_group_apply_std(ds_in,ds_out):
-    std = cuda.shared.array(shape=(TPB1), dtype=float32)
+    std = cuda.shared.array(shape=(TPB), dtype=float32)
     compute_std(ds_in,std)
     for i in range(cuda.threadIdx.x, len(ds_in), cuda.blockDim.x):
         ds_out[i] = std[0]
 
 @cuda.jit(device=True)
 def gd_group_apply_var(ds_in,ds_out):
-    std = cuda.shared.array(shape=(TPB1), dtype=float32)
+    std = cuda.shared.array(shape=(TPB), dtype=float32)
     compute_std(ds_in,std)
     for i in range(cuda.threadIdx.x, len(ds_in), cuda.blockDim.x):
         ds_out[i] = std[0]**2
 
 @cuda.jit(device=True)
 def gd_group_apply_skew(ds_in,ds_out):
-    skew = cuda.shared.array(shape=(TPB1), dtype=float32)
+    skew = cuda.shared.array(shape=(TPB), dtype=float32)
     compute_skew(ds_in,skew)
     for i in range(cuda.threadIdx.x, len(ds_in), cuda.blockDim.x):
         ds_out[i] = skew[0]
 
 @cuda.jit(device=True)
 def gd_group_apply_kurtosis(ds_in,ds_out):
-    kurtosis = cuda.shared.array(shape=(TPB1), dtype=float32)
+    kurtosis = cuda.shared.array(shape=(TPB), dtype=float32)
     compute_kurtosis(ds_in,kurtosis)
     for i in range(cuda.threadIdx.x, len(ds_in), cuda.blockDim.x):
         ds_out[i] = kurtosis[0]
+
+@cuda.jit(device=True)
+def gd_group_apply_copy_first(ds_in,ds_out):
+    cache = cuda.shared.array(shape=(1), dtype=float32)
+    compute_first(ds_in,cache)
+    for i in range(cuda.threadIdx.x, len(ds_in), cuda.blockDim.x):
+        ds_out[i] = cache[0]
+
+@cuda.jit(device=True)
+def gd_group_apply_copy_last(ds_in,ds_out):
+    cache = cuda.shared.array(shape=(1), dtype=float32)
+    compute_last(ds_in,cache)
+    for i in range(cuda.threadIdx.x, len(ds_in), cuda.blockDim.x):
+        ds_out[i] = cache[0]
 
 def groupby_median(df,idcol,col):
     outcol = 'median_%s'%(col)
@@ -267,9 +312,10 @@ def cudf_groupby_agg(df,idcol,col,func_name):
                                   tpb=TPB)
     dg = df.groupby(idcol).agg({outcol:'mean'})
     df.drop_column(outcol)
-    meancol = 'mean_%s'%outcol
-    dg[outcol] = dg[meancol]
-    dg.drop_column(meancol)
+    dg = rename_col(dg,'mean_%s'%outcol,outcol)
+    #meancol = 'mean_%s'%outcol
+    #dg[outcol] = dg[meancol]
+    #dg.drop_column(meancol)
     return dg
 
 def cudf_groupby_aggs(df,group_id_col,aggs):
@@ -296,4 +342,15 @@ def cudf_groupby_aggs(df,group_id_col,aggs):
             else:
                 tmp = cudf_groupby_agg(df,group_id_col,col,func)
                 dg = dg.merge(tmp,on=[group_id_col],how='left')
+    return dg
+
+def drop_duplicates(df,by,keep='first'):
+    if keep not in ['first','last']:
+        raise NotImplementedError(keep)
+
+    cols = [i for i in df.columns if i!=by]
+    aggs = {i:['copy_%s'%keep] for i in cols}
+    dg = cudf_groupby_aggs(df,group_id_col=by,aggs=aggs) 
+    for i in cols:
+        dg = rename_col(dg,'copy_%s_%s'%(keep,i),i)
     return dg
