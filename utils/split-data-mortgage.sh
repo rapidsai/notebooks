@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-SRC="/raid/mortgage/perf_clean"
-DST="/raid/mortgage/perf_test"
-WORK="/raid/mortgage/"
+SRC="/path/to/mortgage/perf"
+DST="/path/to/mortgage/perf_split"
+WORK="/path/to/mortgage/"
 
 if [ $# -ne 1 ]; then
     echo "Must supply size"
