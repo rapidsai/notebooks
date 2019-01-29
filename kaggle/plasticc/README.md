@@ -1,5 +1,5 @@
 # 1. Introduction
-These notebokks demo the single GPU model of 8th place [Rapids.ai](https://rapids.ai) solution of [PLAsTiCC Astronomical Classification](https://www.kaggle.com/c/PLAsTiCC-2018).
+These notebokks demo the single GPU model of 8th place [Rapids.ai](https://rapids.ai) solution of [PLAsTiCC Astronomical Classification](https://www.kaggle.com/c/PLAsTiCC-2018). The full blog can be found [here](https://medium.com/rapids-ai/make-sense-of-the-universe-with-rapids-ai-d105b0e5ec95).
 
 # 2. Build and run the docker demo
 
