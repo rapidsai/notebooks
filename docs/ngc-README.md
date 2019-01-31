@@ -10,14 +10,14 @@ The RAPIDS suite of software libraries gives you the freedom to execute end-to-e
 
 #### RAPIDS 0.5 - 31 Jan 2019
 
-Versions of libraries included in the `0.5` [images](#rapids-05-images):
+Versions of libraries included in the `0.5` [images](#rapids-0-5-images):
 
 - `cuDF` [v0.5.0](https://github.com/rapidsai/cudf/tree/v0.5.0), `cuML` [v0.5.0](https://github.com/rapidsai/cuml/tree/v0.5.0), `RMM` [v0.5.0](https://github.com/rapidsai/RMM/tree/v0.5.0)
 - `xgboost` [branch](https://github.com/rapidsai/xgboost/tree/cudf-mnmg-abi), `dask-xgboost` [branch](https://github.com/rapidsai/dask-xgboost/tree/dask-cudf), `dask-cudf` [branch](https://github.com/rapidsai/dask-cudf), `dask-cuda` [branch](https://github.com/rapidsai/dask-cuda)
 
 #### RAPIDS 0.4 - 05 Dec 2018
 
-Versions of libraries included in the `0.4` [images](#rapids-04-images):
+Versions of libraries included in the `0.4` [images](#rapids-0-4-images):
 
 - `cuDF` [v0.4.0](https://github.com/rapidsai/cudf/tree/v0.4.0), `cuML` [v0.4.0](https://github.com/rapidsai/cuml/tree/v0.4.0)
 - `xgboost`, `dask-xgboost`, `dask-cudf`
