@@ -47,7 +47,7 @@ for line in dask_conf:
         MASTER_IPADDR = line[0]
     if line[0] == IPADDR:
         WHOAMI = line[1]
-    if line[0] == "DEBUG"
+    if line[0] == "DEBUG":
         DEBUG = "DEBUG"
 
 cmd = "bash ../utils/dask-setup.sh " + str(ENVNAME)
