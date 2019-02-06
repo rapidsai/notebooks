@@ -18,23 +18,12 @@ SHELL ["/bin/bash", "-c"]
 RUN conda create --name cudf 
 RUN apt-get update -y && apt-get install -y curl unzip vim
 RUN source activate cudf && \
-  conda install -c nvidia nvstrings=0.1.0
+  conda install -c nvidia -c rapidsai -c numba -c conda-forge -c defaults cudf=0.5 python=3.6
 RUN source activate cudf && \
-  conda install -c nvidia -c rapidsai -c numba -c conda-forge -c defaults cudf=0.4.0
-
-RUN source activate cudf && \
-  pip install xgboost
-RUN source activate cudf && \
-  pip install seaborn
-RUN source activate cudf && \
-  pip install scikit-learn
-RUN source activate cudf && \
-  pip install termcolor
+  pip install xgboost seaborn scikit-learn termcolor kaggle
 
 RUN source activate cudf && \
   conda install -y jupyter notebook
-RUN source activate cudf && \
-  pip install kaggle
 
 ADD notebooks /notebooks
 WORKDIR /notebooks

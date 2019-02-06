@@ -28,8 +28,7 @@ $ jupyter notebook --ip '0.0.0.0' --allow-root
 ```bash
 $ conda create -n cudf python=3.6
 $ source activate cudf
-$ conda install -c nvidia nvstrings=0.1.0
-$ conda install -c nvidia -c rapidsai -c numba -c conda-forge -c defaults cudf=0.4.0
+$ conda install -c nvidia -c rapidsai -c numba -c conda-forge -c defaults cudf=0.5 python=3.6
 $ pip install xgboost seaborn termcolor scikit-learn
 $ conda install jupyter notebook
 ```  
