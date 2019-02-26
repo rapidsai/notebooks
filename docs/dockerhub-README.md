@@ -61,7 +61,7 @@ View the full [tag list](#full-tag-list) for all available images.
 
 * NVIDIA Pascal™ GPU architecture or better
 * CUDA [9.2](https://developer.nvidia.com/cuda-92-download-archive) or [10.0](https://developer.nvidia.com/cuda-downloads) compatible NVIDIA driver
-* Ubuntu 16.04 or 18.04
+* Ubuntu 16.04/18.04 or CentOS 7
 * Docker CE v18+
 * [nvidia-docker](https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)) v2+
 
