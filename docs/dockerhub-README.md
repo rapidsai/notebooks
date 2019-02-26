@@ -6,6 +6,8 @@ Visit [rapids.ai](http://rapids.ai) for more information.
 
 The RAPIDS suite of software libraries gives you the freedom to execute end-to-end data science and analytics pipelines entirely on GPUs. It relies on NVIDIA® CUDA® primitives for low-level compute optimization, but exposes that GPU parallelism and high-bandwidth memory speed through user-friendly Python interfaces.
 
+**NOTE:** Review our [prerequisites](#prerequisites) section to ensure your system meets the minimum requirements for RAPIDS.
+
 ### Current Version
 
 #### RAPIDS 0.5.1 - 26 Feb 2019
