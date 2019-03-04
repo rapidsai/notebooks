@@ -1,5 +1,3 @@
-cuGraph Notebooks
-
-Summary
+# Single GPU Examples
 
 
