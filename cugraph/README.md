@@ -28,6 +28,20 @@ SG
 
 
 
+## Requirements
+
+Running the example in these notebooks requires:
+
+* The latest version of RAPIDS with cuGraph.
+  * Download via Docker, Conda, or PIP  
+* cuGraph is dependent on the latest version of cuDF.  Please install all components of RAPIDS 
+* Python 3.6+
+* A system with an NVIDIA GPU:  Pascal architecture or better
+* CUDA 9.2+
+* NVIDIA driver 396.44+
+
+
+
 
 
 
