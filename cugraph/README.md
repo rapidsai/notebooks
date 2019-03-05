@@ -22,7 +22,12 @@ Example code is broken into two subfolders
 SG
 
 - BFS Example 
+- Jaccard Similarity
 - Louvain Example
+- Page Rank
+- Spectral Clustering - Balanced Cut
+- Spectral Clustering - Modularity
+- Single Source Shortest Path
 
 
 
