@@ -23,6 +23,7 @@ SG
 
 - BFS Example 
 - Jaccard Similarity
+- Weighted Jaccard
 - Louvain Example
 - Page Rank
 - Spectral Clustering - Balanced Cut
@@ -47,7 +48,16 @@ Running the example in these notebooks requires:
 
 
 
+#### Notebook Credits
 
+- Original Authors: Bradley Rees and James Wyles
+- Last Edit: 03/08/2019
+
+RAPIDS Versions: 0.6.0    
+
+Test Hardware
+
+- GP100 32G, CUDA 9,2
 
 
 
