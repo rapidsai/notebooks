@@ -13,7 +13,7 @@ This repository contains a collection of Juyper Notebooks that outline how to ru
 Example code is broken into two subfolders
 
 - SG - for Single GPU example
-- MG - for Multi-GPU examples using DASK
+- _MG - for Multi-GPU examples using DASK- **notebooks coming soon in v0.7**_
 
 
 
