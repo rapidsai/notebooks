@@ -57,7 +57,7 @@ RAPIDS Versions: 0.6.0
 
 Test Hardware
 
-- GP100 32G, CUDA 9,2
+- GV100 32G, CUDA 9,2
 
 
 
