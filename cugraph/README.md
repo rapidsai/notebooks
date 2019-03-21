@@ -13,7 +13,7 @@ This repository contains a collection of Juyper Notebooks that outline how to ru
 Example code is broken into two subfolders
 
 - SG - for Single GPU example
-- MG - for Multi-GPU examples using DASK
+- _MG - for Multi-GPU examples using DASK- **notebooks coming soon in v0.7**_
 
 
 
@@ -57,7 +57,7 @@ RAPIDS Versions: 0.6.0
 
 Test Hardware
 
-- GP100 32G, CUDA 9,2
+- GV100 32G, CUDA 9,2
 
 
 
