@@ -6,6 +6,10 @@
 * `knn_demo`: notebook showcasing k-nearest neighbors (knn) algorithm comparison between cuML and scikit-learn.
 * `pca_demo`: notebook showcasing principal component analysis (PCA) algorithm comparison between cuML and scikit-learn.
 * `tsvd_demo`: notebook showcasing truncated singular value decomposition (tsvd) algorithm comparison between cuML and scikit-learn.
+* `linear_regression`: notebook showcasing linear regression comparison between cuML and scikit-learn.
+* `ridge_regression`: notebook showcasing ridge regression comparison between cuML and scikit-learn.
+* `sgd`: notebook showcasing ridge regression comparison between cuML and scikit-learn.
+* `umap`: notebook showcasing and evaluating cuML's UMAP dimension reduction technique.
 
 ## dbscan_demo
 
@@ -102,3 +106,119 @@ Final cell of the notebook should output:
 compare tsvd: cuml vs sklearn transformed results equal
 ```
 
+## linear_regression_demo
+
+Typical output of the cells processing linear_regression looks like:
+
+- For scikit-learn:
+```
+CPU times: user  s, sys:  s, total:  s
+Wall time:  s
+```
+
+- For cuML:
+```
+CPU times: user  s, sys:  s, total:  s
+Wall time:  s
+```
+
+Final cell of the notebook should output:
+
+```
+SKL MSE(y):
+3.4750864e-13
+CUML MSE(y):
+5.827862e-07
+```
+
+## ridge_regression_demo
+
+Typical output of the cells processing ridge_regression looks like:
+
+- For scikit-learn:
+```
+CPU times: user  s, sys:  s, total:  s
+Wall time:  s
+```
+
+- For cuML:
+```
+CPU times: user  s, sys:  s, total:  s
+Wall time:  s
+```
+
+Final cell of the notebook should output:
+
+```
+SKL MSE(y):
+1.8886121326984265e-08
+CUML MSE(y):
+1.9204549e-08
+```
+
+## sgd_demo
+
+Typical output of the cells processing sgd looks like:
+
+- For scikit-learn:
+```
+CPU times: user  s, sys:  s, total:  s
+Wall time:  s
+```
+
+- For cuML:
+```
+CPU times: user  s, sys:  s, total:  s
+Wall time:  s
+```
+
+Final cell of the notebook should output:
+
+```
+SKL MSE(y):
+1.1356839999498491e-07
+CUML MSE(y):
+1.04257616e-07
+```
+
+## umap_demo
+
+Typical output of the cells processing umap looks like:
+
+- For blobs clustering test:
+```
+CPU times: user 15.4 s, sys: 1.71 s, total: 17.1 s
+Wall time: 4.53 s
+```
+
+Final cell of blobs clustering test should output:
+
+```
+Cluster demonstration completed successfully
+```
+
+
+- For trustworthiness evaluation using random initialization:
+```
+CPU times: user 9.84 s, sys: 380 ms, total: 10.2 s
+Wall time: 945 ms
+```
+
+Final cell of trustworthiness evaluation with random initialization should output:
+
+```
+Trustworthiness on random initialization passed successfully
+```
+
+- For trustworthiness evaluation using spectral initialization:
+
+```
+CPU times: user 9.83 s, sys: 296 ms, total: 10.1 s
+Wall time: 832 ms
+```
+
+Final cell of trustworthiness evaluation with spectral initialization should output:
+
+```
+Trustworthiness on spectral initialization passed successfully
+```
