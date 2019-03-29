@@ -185,21 +185,40 @@ CUML MSE(y):
 
 Typical output of the cells processing umap looks like:
 
-- For scikit-learn:
+- For blobs clustering test:
 ```
-CPU times: user  s, sys:  s, total:  s
-Wall time:  s
-```
-
-- For cuML:
-```
-CPU times: user  s, sys:  s, total:  s
-Wall time:  s
+CPU times: user 15.4 s, sys: 1.71 s, total: 17.1 s
+Wall time: 4.53 s
 ```
 
-Final cell of the notebook should output:
+Final cell of blobs clustering test should output:
 
 ```
-nnz=540
-non_zero_vals=536
+Cluster demonstration completed successfully
+```
+
+
+- For trustworthiness evaluation using random initialization:
+```
+CPU times: user 9.84 s, sys: 380 ms, total: 10.2 s
+Wall time: 945 ms
+```
+
+Final cell of trustworthiness evaluation with random initialization should output:
+
+```
+Trustworthiness on random initialization passed successfully
+```
+
+- For trustworthiness evaluation using spectral initialization:
+
+```
+CPU times: user 9.83 s, sys: 296 ms, total: 10.1 s
+Wall time: 832 ms
+```
+
+Final cell of trustworthiness evaluation with spectral initialization should output:
+
+```
+Trustworthiness on spectral initialization passed successfully
 ```
