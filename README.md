@@ -53,6 +53,6 @@
 | Docs      | dockerhub-readme       |                                                                                                                                                                                                                               |
 
 # Additional Information
-* `The **cuml**` folder also includes a small subset of the Mortgage Dataset used in the notebooks and the full image set from the Fashion MNIST dataset.
+* The **cuml** folder also includes a small subset of the Mortgage Dataset used in the notebooks and the full image set from the Fashion MNIST dataset.
 
 * `utils`: contains a set of useful scripts for interacting with RAPIDS
