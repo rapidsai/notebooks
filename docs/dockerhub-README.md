@@ -90,7 +90,7 @@ Notebooks can be found in two directories within the container:
 * `/rapids/notebooks/cuml` - cuML demo notebooks
   * These notebooks have data pre-loaded in the container image and will be decompressed by the notebooks
 * `/rapids/notebooks/mortgage` - cuDF, Dask, XGBoost demo notebook
-  * This notebook requires download of [Mortgage Data](https://rapidsai.github.io/demos/datasets/mortgage-data), see notebook `E2E.ipynb` for more details
+  * This notebook requires download of [Mortgage Data](https://docs.rapids.ai/datasets/mortgage-data), see notebook `E2E.ipynb` for more details
 
 ### Custom Data and Advanced Usage
 
