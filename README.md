@@ -1,10 +1,10 @@
 # RAPIDS Notebooks and Utilities
 
-# XGBoost Notebook
+## XGBoost Notebook
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | XGBoost   | XGBoost Demo           | This notebook shows the acceleration one can gain by using GPUs with XGBoost in RAPIDS.                                                                                                                                       |
-# CuML Notebooks
+## CuML Notebooks
  The cuML notebooks showcase how to use the machine learning algorithms implemented in cuML along with the advantages of using cuML over scikit-learn. These notebooks compare the time required and the performance of the algorithms. Below are a list of such algorithms:
  
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
@@ -20,7 +20,7 @@
 | cuML      | umap_demo              | The uniform manifold approximation & projection algorithm is compared with the original author's equivalent non-GPU \Python implementation using `fit` and `transform` functions                       |
 | cuML      | umap_demo graphed      | Demonstration of cuML uniform manifold approximation & projection algorithm's supervised approach against mortgage dataset and comparison of results against the original author's equivalent non-GPU \Python implementation. |
 
-# CuGraph Notebook
+## CuGraph Notebook
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | cuGraph   | Louvain                | Demonstration of using cuGraph to identify clusters in a test graph using the Louvain algorithm                                                                                                                               |
@@ -31,13 +31,13 @@
 | cuGraph   | SSSP                   | Demonstration of using cuGraph to computer the The Shortest Path from a given vertex to all other in our training graph                                                                                                       |
 | cuGraph   | Spectral-Clustering    | Demonstration of using cuGraph to identify clusters in a test graph using Spectral Clustering using both the (A) Balance Cut and (B) the Modularity Maximization quality metrics                                              |
 
-# Tutorial with an End to End workflow
+## Tutorial with an End to End workflow
 
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Tutorials | DBSCAN_demo_full       | Demonstrate how to use DBSCAN - a popular clustering algorithm - and how to use the GPU accelerated implementation of this algorithm in RAPIDS.                                                                               |
 
-# Utils Notebooks
+## Utils Notebooks
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Utils     | start-jupyter.sh       | starts a JupyterLab environment for interacting with, and running, notebooks                                                                                                                                                  |
@@ -46,13 +46,13 @@
 | Utils     | dask-setup.sh          | a low-level script for constructing a set of Dask workers on a single node                                                                                                                                                    |
 | Utils     | split-data-mortgage.sh | splits mortgage data files into smaller parts, and saves them for use with the mortgage notebook                                                                                                                              |
 
-# Documentation 
+## Documentation 
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Docs      | ngc-readme             |                                                                                                                                                                                                                               |
 | Docs      | dockerhub-readme       |                                                                                                                                                                                                                               |
 
-# Additional Information
+## Additional Information
 * The `cuml` folder also includes a small subset of the Mortgage Dataset used in the notebooks and the full image set from the Fashion MNIST dataset.
 
 * `utils`: contains a set of useful scripts for interacting with RAPIDS
