@@ -30,15 +30,18 @@
 | cuGraph   | BFS                    | Demonstration of using cuGraph to computer the Bredth First Search space from a given vertex to all other in our training graph                                                                                               |
 | cuGraph   | SSSP                   | Demonstration of using cuGraph to computer the The Shortest Path from a given vertex to all other in our training graph                                                                                                       |
 | cuGraph   | Spectral-Clustering    | Demonstration of using cuGraph to identify clusters in a test graph using Spectral Clustering using both the (A) Balance Cut and (B) the Modularity Maximization quality metrics                                              |
+| cuGraph   | Pagerank               | Demonstration of using both NetworkX and cuGraph to compute the PageRank of each vertex in our test dataset                                                                                                                   |
+| cuGraph   | Triangle Counting      | Demonstration of using both NetworkX and cuGraph  to compute the the number of Triangles in our test dataset                                                                                                                  |
+You can now import Markdown table code directly using File/Paste table data... dialog.
 
 ## Tutorial with an End to End workflow
 
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Tutorials | DBSCAN_demo_full       | Demonstrate how to use DBSCAN - a popular clustering algorithm - and how to use the GPU accelerated implementation of this algorithm in RAPIDS.                                                                               |
+| Tutorials | DBSCAN_demo_full       | Demonstration of how to use DBSCAN - a popular clustering algorithm - and how to use the GPU accelerated implementation of this algorithm in RAPIDS.                                                                               |
 
-## Utils Notebooks
-| Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
+## Utils Scripts
+| Folder    | Script Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Utils     | start-jupyter.sh       | starts a JupyterLab environment for interacting with, and running, notebooks                                                                                                                                                  |
 | Utils     | stop-jupyter.sh        | identifies all process IDs associated with Jupyter and kills them                                                                                                                                                             |
@@ -46,8 +49,8 @@
 | Utils     | dask-setup.sh          | a low-level script for constructing a set of Dask workers on a single node                                                                                                                                                    |
 | Utils     | split-data-mortgage.sh | splits mortgage data files into smaller parts, and saves them for use with the mortgage notebook                                                                                                                              |
 
-## Documentation 
-| Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
+## Documentation (WIP) 
+| Folder    | Document Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Docs      | ngc-readme             |                                                                                                                                                                                                                               |
 | Docs      | dockerhub-readme       |                                                                                                                                                                                                                               |
