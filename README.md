@@ -32,7 +32,6 @@
 | cuGraph   | Spectral-Clustering    | Demonstration of using cuGraph to identify clusters in a test graph using Spectral Clustering using both the (A) Balance Cut and (B) the Modularity Maximization quality metrics                                              |
 | cuGraph   | Pagerank               | Demonstration of using both NetworkX and cuGraph to compute the PageRank of each vertex in our test dataset                                                                                                                   |
 | cuGraph   | Triangle Counting      | Demonstration of using both NetworkX and cuGraph  to compute the the number of Triangles in our test dataset                                                                                                                  |
-You can now import Markdown table code directly using File/Paste table data... dialog.
 
 ## Tutorial with an End to End workflow
 
@@ -59,3 +58,5 @@ You can now import Markdown table code directly using File/Paste table data... d
 * The `cuml` folder also includes a small subset of the Mortgage Dataset used in the notebooks and the full image set from the Fashion MNIST dataset.
 
 * `utils`: contains a set of useful scripts for interacting with RAPIDS
+
+* For additional, community driven notebooks, which will include our blogs, tutorials, workflows, and more intricate examples, please see the [Notebooks Extended Repo](https://github.com/rapidsai/notebooks-extended)
