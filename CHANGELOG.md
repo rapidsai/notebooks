@@ -5,7 +5,7 @@
 - 
 
 ## Improvements
-- PR #144  Added a ChangeLog
+- PR #144  Added top level CHANGELOG.  Added a README to cugraph  
 
 ## Bug Fixes
 -  
