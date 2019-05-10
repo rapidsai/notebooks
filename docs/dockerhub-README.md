@@ -135,7 +135,7 @@ This prints the function signature and its usage documentation. If this is not e
 
     [1] ??pygdf.read_csv
 
-Check out the RAPIDS [documentation](http://rapids.ai/start.html) for more detailed information and a RAPIDS [cheat sheet](https://rapids.ai/files/cheatsheet.pdf).
+Check out the RAPIDS [documentation](http://rapids.ai/start.html) for more detailed information.
 
 ## More Information
 
