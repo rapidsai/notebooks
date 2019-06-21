@@ -10,6 +10,9 @@
 * `ridge_regression`: notebook showcasing ridge regression comparison between cuML and scikit-learn.
 * `sgd`: notebook showcasing stochastic gradient descent comparison between cuML and scikit-learn.
 * `umap`: notebook showcasing and evaluating cuML's UMAP dimension reduction technique.
+* `umap_demo_graphed`: Demonstration of cuML uniform manifold approximation & projection algorithm's supervised approach against mortgage dataset and comparison of results against the original author's equivalent non-GPU \Python implementation.
+* `umap_supervised`: Demostration of UMAP supervised training. Uses a set of labels to perform supervised dimensionality reduction. UMAP can also be trained on datasets with incomplete labels, by using a label of "-1" for unlabeled samples.
+* `coordinate descent`: This notebook includes code examples of lasso and elastic net models. These models are placed together so a comparison between the two can also be made in addition to their sklearn equivalent.
 
 ## dbscan_demo
 
@@ -210,7 +213,7 @@ CPU times: user 10min 22s, sys: 417 ms, total: 10min 22s
 Wall time: 10min 20s
 ```
 
-Prefict:
+Predict:
 
 ```
 CPU times: user 146 ms, sys: 63 ms, total: 209 ms
@@ -227,7 +230,7 @@ CPU times: user 2min 13s, sys: 8.1 s, total: 2min 21s
 Wall time: 2min 18s
 ```
 
-Prefict:
+Predict:
 
 ```
 CPU times: user 139 ms, sys: 10.9 ms, total: 150 ms
@@ -250,3 +253,131 @@ This notebook currently performs assertions and does not print any output. It co
 The first test verifies that when the input contains blobs generated from several different clusters, the UMAP output produces low-dimensional blobs with the same number of clusters.
 
 The second test demonstrates that the neighborhoods of the low-dimensional embeddings are similar to the neighborhoods of the inputs. A score, known as trustworthiness, and made popular by t-SNE, is used to evaluate the UMAP embeddings for both random and spectral initialization strategies.
+
+## umap demo graphed
+
+Outputs of the cells processing umap on the Fashion datasets look like:
+
+- For cuML:
+
+Fit_transform:
+
+```
+8.57 s ± 111 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+```
+
+Compare the CPU and GPU implementations of UMAP:
+
+```
+Scoring ~97% shows the GPU implementation is comparable to the original CPU implementation and the training time was ~9.5X faster
+```
+
+## umap suprevised
+
+Typical output of the cells processing umap looks like:
+
+- For cuML:
+
+Supervised fit_transform:
+
+```
+Took 3.194058 sec.
+```
+
+Unsupervised fit_transform:
+
+```
+Took 2.225810 sec
+```
+
+## Coordinate Descent
+
+### Lasso
+Typical output of the cells processing lasso looks like:
+
+- For scikit-learn:
+
+Fit:
+
+```
+CPU times: user 59.8 s, sys: 19 s, total: 1min 18s
+Wall time: 9.47 s
+```
+
+Predict:
+
+```
+CPU times: user 5.26 s, sys: 2.42 s, total: 7.68 s
+Wall time: 1.24 s
+```
+
+
+- For cuML:
+
+Fit:
+
+```
+CPU times: user 8.28 s, sys: 1.06 s, total: 9.34 s
+Wall time: 2.11 s
+```
+
+Predict:
+
+```
+CPU times: user 392 ms, sys: 24 ms, total: 416 ms
+Wall time: 410 ms
+```
+
+Final cell of the notebook should output:
+
+```
+SKL MSE(y):
+1.2218163805946025e-05
+CUML MSE(y):
+1.2218108e-05
+```
+
+### Elastic Net
+Typical output of the cells processing elastic net looks like:
+
+- For scikit-learn:
+
+Fit:
+
+```
+CPU times: user 59.7 s, sys: 23 s, total: 1min 22s
+Wall time: 9.17 s
+```
+
+Predict:
+
+```
+CPU times: user 4.43 s, sys: 1.91 s, total: 6.34 s
+Wall time: 1.21 s
+```
+
+
+- For cuML:
+
+Fit:
+
+```
+CPU times: user 8.02 s, sys: 760 ms, total: 8.78 s
+Wall time: 1.44 s
+```
+
+Predict:
+
+```
+CPU times: user 8.02 s, sys: 760 ms, total: 8.78 s
+Wall time: 1.44 s
+```
+
+Final cell of the notebook should output:
+
+```
+SKL MSE(y):
+1.2070175934420877e-05
+CUML MSE(y):
+1.20697405e-05
+```
