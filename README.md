@@ -20,6 +20,7 @@
 | cuML      | [umap_demo](cuml/umap_demo.ipynb)              | The uniform manifold approximation & projection algorithm is compared with the original author's equivalent non-GPU \Python implementation using `fit` and `transform` functions                       |
 | cuML      | [umap_demo_graphed](cuml/umap_demo_graphed.ipynb)      | Demonstration of cuML uniform manifold approximation & projection algorithm's supervised approach against mortgage dataset and comparison of results against the original author's equivalent non-GPU \Python implementation. |
 | cuML      | [umap_demo_supervised](cuml/umap_supervised_demo.ipynb)   | Demostration of UMAP supervised training.  Uses a set of labels to perform supervised dimensionality reduction. UMAP can also be trained on datasets with incomplete labels, by using a label of "-1" for unlabeled samples. |
+| cuML      | [random forest](cuml/rf_demo.ipynb)   | This notebook includes code examples of Random Forest and it showcases the `fit` and `predict` functions. |
 
 ## CuGraph Notebooks
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
