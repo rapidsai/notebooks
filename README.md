@@ -22,6 +22,12 @@
 | cuML      | [umap_demo_supervised](cuml/umap_supervised_demo.ipynb)   | Demostration of UMAP supervised training.  Uses a set of labels to perform supervised dimensionality reduction. UMAP can also be trained on datasets with incomplete labels, by using a label of "-1" for unlabeled samples. |
 | cuML      | [random forest](cuml/rf_demo.ipynb)   | This notebook includes code examples of Random Forest and it showcases the `fit` and `predict` functions. |
 
+## CuDF Notebooks
+| Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
+|-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| cuDF      | [notebooks_Apply_Operations_in_cuDF](cudf/notebooks_Apply_Operations_in_cuDF.ipynb)            | This notebook showcases two special methods where cuDF goes beyond the Pandas library: apply_rows and apply_chunk functions. They utilized the Numba library to accelerate the data transformation via GPU in parallel.                                                                            |
+| cuDF      | [notebooks_numba_cuDF_integration](cudf/notebooks_numba_cuDF_integration.ipynb)               | This notebook showcases how to use Numba CUDA to accelerate cuDF data transformation and how to step by step accelerate it using CUDA programming tricks                                                                                                                          |
+
 ## CuGraph Notebooks
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
