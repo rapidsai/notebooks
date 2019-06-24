@@ -14,7 +14,7 @@ MASTER_IPADDR=$7
 WHOAMI=$8
 LOG=$9
 
-DASK_LOCAL_DIR=./.dask
+DASK_LOCAL_DIR=${DASK_LOCAL_DIR:-./.dask}
 NUM_GPUS=$(nvidia-smi --list-gpus | wc --lines)
 MY_IPADDR=($(hostname --all-ip-addresses))
 
