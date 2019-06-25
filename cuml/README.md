@@ -4,6 +4,7 @@
 
 * `dbscan_demo`: notebook showcasing density-based spatial clustering of applications with noise (dbscan) algorithm comparison between cuML and scikit-learn.
 * `knn_demo`: notebook showcasing k-nearest neighbors (knn) algorithm comparison between cuML and scikit-learn.
+* `kmeans_demo`: notebook showcasing k-means clustering (kmeans) algorithm comparison between cuML and scikit-learn.
 * `pca_demo`: notebook showcasing principal component analysis (PCA) algorithm comparison between cuML and scikit-learn.
 * `tsvd_demo`: notebook showcasing truncated singular value decomposition (tsvd) algorithm comparison between cuML and scikit-learn.
 * `linear_regression`: notebook showcasing linear regression comparison between cuML and scikit-learn.
@@ -62,6 +63,28 @@ compare knn: cuml vs sklearn indexes NOT equal
 ```
 
 Note that the indexes can differ currently between results, but distances should be equal.
+
+## kmeans_demo
+
+Typical output of the cells processing kmeans looks like:
+
+- For scikit-learn kmeans:
+```
+CPU times: user 138 ms, sys: 236 ms, total: 374 ms
+Wall time: 940 ms
+```
+
+- For cuML kmeans:
+```
+CPU times: user 22.1 ms, sys: 20.3 ms, total: 42.4 ms
+Wall time: 40.7 ms
+```
+
+Final cell of the notebook should output:
+
+```
+compare kmeans: cuml vs sklearn labels_ are equal
+```
 
 ## pca_demo
 
