@@ -4,7 +4,6 @@
 - Each notebook is linked to in REAME.md
 - PR #178 Adding KMeans notebook
 - PR #18 Added cuDF example notebooks
-- Added new mortgage.csv
 
 ## Improvements
 - Updated SSSP notebook
