@@ -1,7 +1,7 @@
 # Notebooks 0.8.0 (27 June 2019)
 
 ## New Features
-- Each notebook is linked to in REAME.md
+- Each notebook is linked to in README.md
 - PR #178 Adding KMeans notebook
 - PR #18 Added cuDF example notebooks
 
