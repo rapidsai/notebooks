@@ -1,8 +1,13 @@
 # Notebooks 0.8.0 (27 June 2019)
 
 ## New Features
+- Each notebook is linked to in REAME.md
+- PR #178 Adding KMeans notebook
+- PR #18 Added cuDF example notebooks
 
 ## Improvements
+- Updated SSSP notebook
+- Regression notebooks show of `train_test_split()` functon
 
 ## Bug Fixes
 
