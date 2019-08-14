@@ -50,6 +50,7 @@
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Tutorials | [DBSCAN_demo_full](tutorials/DBSCAN_Demo_Full.ipynb)       | Demonstration of how to use DBSCAN - a popular clustering algorithm - and how to use the GPU accelerated implementation of this algorithm in RAPIDS.                                                                               |
+| Tutorials | [HoltWinters_demo_full](tutorials/holtwinters_demo_full.ipynb)   | Demonstration of how to use Holt-Winters, a time-series forecasting algorithm, on a dataset to make GPU accelerated out-of-sample predictions.      |
 
 ## Utils Scripts
 | Folder    | Script Title         | Description                                                                                                                                                                                                                   |
