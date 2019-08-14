@@ -23,7 +23,7 @@ This repository contains a collection of Jupyter Notebooks that outline how to r
 | Triangle Counting   | Count the number of Triangle in a graph                      |
 | Pagerank            | Compute the PageRank of every vertex in a graph              |
 | Renumbering         | Renumber the vertex IDs in a graph                           |
-
+| Connected Components| Find weakly and strongly connected components in a graph     | 
 
 
 
