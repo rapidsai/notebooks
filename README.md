@@ -42,6 +42,7 @@
 | cuGraph   | [Spectral-Clustering](cugraph/Spectral-Clustering.ipynb)    | Demonstration of using cuGraph to identify clusters in a test graph using Spectral Clustering using both the (A) Balance Cut and (B) the Modularity Maximization quality metrics                                              |
 | cuGraph   | [Pagerank](cugraph/Pagerank.ipynb)               | Demonstration of using both NetworkX and cuGraph to compute the PageRank of each vertex in our test dataset                                                                                                                   |
 | cuGraph   | [Triangle Counting](cugraph/Triangle-Counting.ipynb)      | Demonstration of using both NetworkX and cuGraph  to compute the the number of Triangles in our test dataset                                                                                                                  |
+| cuGraph   | [Connected Components](cugraph/ConnectedComponents.ipynb)      | Demonstration of using cuGraph to compute weakly and strongly connected components in a test graph.                                                                                                                  |
 
 ## Tutorial with an End to End workflow
 
