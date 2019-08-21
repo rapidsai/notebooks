@@ -1,3 +1,12 @@
+# Notebooks 0.9.0 (21 Aug 2019)
+
+## New Features
+
+## Improvements
+
+## Bug Fixes
+- PR #184 Renumber and louvain apis changed
+
 # Notebooks 0.8.0 (27 June 2019)
 
 ## New Features
