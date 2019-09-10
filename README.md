@@ -48,6 +48,11 @@
 | cuGraph   | [Triangle Counting](cugraph/Triangle-Counting.ipynb)      | Demonstration of using both NetworkX and cuGraph  to compute the the number of Triangles in our test dataset                                                                                                                  |
 | cuGraph   | [Connected Components](cugraph/ConnectedComponents.ipynb)      | Demonstration of using cuGraph to compute weakly and strongly connected components in a test graph.                                                                                                                  |
 
+## cuSpatial Notebooks
+| Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
+|-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| cuSpatial   | [Trajectory Clustering](cuspatial/trajectory_clustering.ipynb)                | Demonstrates using cuSpatial to identify clusters among trajectories using directed Hausdorff distance metric                                                                                                                               |
+
 ## Tutorial with an End to End workflow
 
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
