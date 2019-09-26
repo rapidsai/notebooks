@@ -8,6 +8,8 @@
 
 ## Bug Fixes
 
+- PR #222 Updated imports to match current cudf, cleaned up notebook text.
+
 # Notebooks 0.9.0 (TBD)
 
 ## New Features
@@ -32,12 +34,9 @@
 - PR #133 Adding cuGraph notebooks
 
 ## Improvements
-- PR #144  Added top level CHANGELOG.  Added a README to cugraph  
+- PR #144  Added top level CHANGELOG.  Added a README to cugraph
 
 ## Bug Fixes
 
 
 # Notebooks 0.6.0 (22 Mar 2019)
-
-
-
