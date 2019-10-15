@@ -1,4 +1,4 @@
-# Notebooks 0.10.0 (TBD)
+# Notebooks 0.10.0 (Oct 16 2019)
 
 ## New Features
 
