@@ -11,13 +11,18 @@
 
 ## New Features
 
-- PR #216 New cuSpatial trajectory clustering notebook
+- PR #211 New TSNE demo notebook
+- PR #230 New SVM demo notebook
+
 
 ## Improvements
+- PR #241 K-Means uses new cuml.dask.datasets.make_blobs generator
+- Various notebook text improvements
 
 ## Bug Fixes
 
 - PR #222 Updated imports to match current cudf, cleaned up notebook text.
+- PR #204 Bug fix for kmeans notebook
 
 # Notebooks 0.9.0 (TBD)
 
