@@ -7,7 +7,7 @@
 ## Bug Fixes
 
 
-# Notebooks 0.10.0
+# Notebooks 0.10.0 (15 October 2019)
 
 ## New Features
 
@@ -24,7 +24,7 @@
 - PR #222 Updated imports to match current cudf, cleaned up notebook text.
 - PR #204 Bug fix for kmeans notebook
 
-# Notebooks 0.9.0 (TBD)
+# Notebooks 0.9.0 (16 August 2019)
 
 ## New Features
 - PR #192 New Holt-Winters demo notebook
