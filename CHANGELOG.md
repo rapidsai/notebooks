@@ -1,13 +1,21 @@
-# Notebooks 0.10.0 (16 Oct 2019)
+# Notebooks 0.11.0 (TBD)
 
 ## New Features
-
-- PR #216 New cuSpatial trajectory clustering notebook
+- PR #251 New cuML metrics and MBSGD classifier and regressor notebooks
 
 ## Improvements
 
 ## Bug Fixes
 
+
+# Notebooks 0.10.0 (TBD)
+
+## New Features
+- PR #216 New cuSpatial trajectory clustering notebook
+
+## Improvements
+
+## Bug Fixes
 - PR #222 Updated imports to match current cudf, cleaned up notebook text.
 
 # Notebooks 0.9.0 (TBD)
