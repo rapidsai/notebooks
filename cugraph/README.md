@@ -12,18 +12,37 @@ This repository contains a collection of Jupyter Notebooks that outline how to r
 
 ## Summary
 
-| Notebook            | Description                                                  |
-| ------------------- | ------------------------------------------------------------ |
-| BFS                 | Compute the Breadth First Search path from a starting vertex to every other vertex in a graph |
-| SSSP                | Single Source Shortest Path  - compute the shortest path from a starting vertex to every other vertex |
-| Vertex Similarity   | Compute vertex similarity score using both:<br />Jaccard Similarity<br />Overlap Coefficient |
-| Spectral-Clustering | Identify clusters in a  graph using Spectral Clustering with both<br />Balanced Cut <br />Modularity |
-| Louvain             | Identify clusters in a graph using the Louvain algorithm     |
-| Weighted Jaccard    | Computer the Jaccard Similarity using vertex weights         |
-| Triangle Counting   | Count the number of Triangle in a graph                      |
-| Pagerank            | Compute the PageRank of every vertex in a graph              |
+| Folder            | Notebook             | Description                                                                     |
+|-------------------| ------------------- -| ------------------------------------------------------------------------------- |
+| Centrality        |                      |                                                                                 |
+|                   | Katz                 | Compute the Katz centrality for every vertex                                    |
+| Community         |                      |                                                                                 |
+|                   | Louvain              | Identify clusters in a graph using the Louvain algorithm                        |
+|                   | Spectral-Clustering  | Identify clusters in a  graph using Spectral Clustering with both               | 
+|                   |                      |   * _Balanced Cut_                                                              | 
+|                   |                      |   * _Modularity Modularity_                                                     | 
+|                   | Subgraph Extraction  | Compute a subgraph of the existing graph including only the specified vertices  |
+|                   | Triangle Counting    | Count the number of Triangle in a graph                                         |
+| Components        |                      |                                                                                 |
+|                   | Connected Components | Find weakly and strongly connected components in a graph                        | 
+
+
+| Link-Prediction   |                      |                                                                                      |
+|                   | Jacard Similarity    | Compute vertex similarity score using both:<br />- Jaccard Similarity<br />- Weighted Jaccard |
+|                   | Overlap Similarity   | Compute vertex similarity score using the Overlapp Coefficent                        |
+| Link-Analysis     |                      |                                                                                      |
+|                   | Pagerank             | Compute the PageRank of every vertex in a graph                                      |
+| Traversal         |                      |                                                                                      |
+|                   | BFS                  | Compute the Breadth First Search path from a starting vertex to every other vertex in a graph |
+|                   | SSSP                 | Single Source Shortest Path  - compute the shortest path from a starting vertex to every other vertex |
+
+| Community         |                      |                                                                                       |
+|                   | Triangle Counting    | Count the number of Triangle in a graph                      |
+
+
+
+
 | Renumbering         | Renumber the vertex IDs in a graph                           |
-| Connected Components| Find weakly and strongly connected components in a graph     | 
 
 
 
