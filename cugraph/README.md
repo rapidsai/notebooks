@@ -35,7 +35,6 @@ This repository contains a collection of Jupyter Notebooks that outline how to r
 | Structure         |                      |                                                                                 |
 |                   | Renumbering          | Renumber the vertex IDs in a graph (two sample notebooks)                       |
 |                   | Symmetrize           | Symmetrize the edges in a graph                                                 |
-|-------------------| ------------------- -| ------------------------------------------------------------------------------- |
 
 
 
