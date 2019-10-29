@@ -7,31 +7,31 @@ This repository contains a collection of Jupyter Notebooks that outline how to r
 
 ## Summary
 
-| Folder          | Notebook             | Description                                                  |
-| --------------- | -------------------- | ------------------------------------------------------------ |
-| Centrality      |                      |                                                              |
-|                 | Katz                 | Compute the Katz centrality for every vertex                 |
-| Community       |                      |                                                              |
-|                 | Louvain              | Identify clusters in a graph using the Louvain algorithm     |
-|                 | Spectral-Clustering  | Identify clusters in a  graph using Spectral Clustering with both<br> - Balanced Cut<br> - Modularity Modularity |
-|                 | Subgraph Extraction  | Compute a subgraph of the existing graph including only the specified vertices |
-|                 | Triangle Counting    | Count the number of Triangle in a graph                      |
-| Components      |                      |                                                              |
-|                 | Connected Components | Find weakly and strongly connected components in a graph     |
-| Core            |                      |                                                              |
-|                 | K-Core               | Extracts the K-core cluster                                  |
-|                 | Core Number          | Computer the Core number for each vertex in a graph          |
-| Link Analysis   |                      |                                                              |
-|                 | Pagerank             | Compute the PageRank of every vertex in a graph              |
-| Link Prediction |                      |                                                              |
-|                 | Jacard Similarity    | Compute vertex similarity score using both:<br />- Jaccard Similarity<br />- Weighted Jaccard |
-|                 | Overlap Similarity   | Compute vertex similarity score using the Overlapp Coefficent |
-| Traversal       |                      |                                                              |
-|                 | BFS                  | Compute the Breadth First Search path from a starting vertex to every other vertex in a graph |
-|                 | SSSP                 | Single Source Shortest Path  - compute the shortest path from a starting vertex to every other vertex |
-| Structure       |                      |                                                              |
-|                 | Renumbering          | Renumber the vertex IDs in a graph (two sample notebooks)    |
-|                 | Symmetrize           | Symmetrize the edges in a graph                              |
+| Folder          | Notebook                                                     | Description                                                  |
+| --------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Centrality      |                                                              |                                                              |
+|                 | [Katz](centrality/Katz.ipynb)                                | Compute the Katz centrality for every vertex                 |
+| Community       |                                                              |                                                              |
+|                 | [Louvain](community/Louvain.ipynb)                           | Identify clusters in a graph using the Louvain algorithm     |
+|                 | [Spectral-Clustering](community/Spectral-Clustering.ipynb)   | Identify clusters in a  graph using Spectral Clustering with both<br> - Balanced Cut<br> - Modularity Modularity |
+|                 | [Subgraph Extraction](community/Sungraph-Extraction.ipynb)   | Compute a subgraph of the existing graph including only the specified vertices |
+|                 | [Triangle Counting](community/Triangle-Counting.ipynb)       | Count the number of Triangle in a graph                      |
+| Components      |                                                              |                                                              |
+|                 | [Connected Components](components/ConnectedComponents.ipynb) | Find weakly and strongly connected components in a graph     |
+| Core            |                                                              |                                                              |
+|                 | [K-Core](cores/kcore.ipynb)                                  | Extracts the K-core cluster                                  |
+|                 | [Core Number](cores/core-number.ipynb)                       | Computer the Core number for each vertex in a graph          |
+| Link Analysis   |                                                              |                                                              |
+|                 | [Pagerank](link_analysis/Pagerank.ipynb)                     | Compute the PageRank of every vertex in a graph              |
+| Link Prediction |                                                              |                                                              |
+|                 | [Jacard Similarity](link_prediction/Jaccard-Similarity.ipynb) | Compute vertex similarity score using both:<br />- Jaccard Similarity<br />- Weighted Jaccard |
+|                 | [Overlap Similarity](link_prediction/Overlap-Similarity.ipynb) | Compute vertex similarity score using the Overlap Coefficient |
+| Traversal       |                                                              |                                                              |
+|                 | [BFS](traversal/BFS.ipynb)                                   | Compute the Breadth First Search path from a starting vertex to every other vertex in a graph |
+|                 | [SSSP](traversal/SSSP.ipynb)                                 | Single Source Shortest Path  - compute the shortest path from a starting vertex to every other vertex |
+| Structure       |                                                              |                                                              |
+|                 | [Renumbering](structure/Renumber.ipynb) <br> [Renumbering 2](structure/Renumber-2.ipynb) | Renumber the vertex IDs in a graph (two sample notebooks)    |
+|                 | [Symmetrize](structure/Symmetrize.ipynb)                     | Symmetrize the edges in a graph                              |
 
 
 
@@ -41,7 +41,7 @@ This repository contains a collection of Jupyter Notebooks that outline how to r
 Running the example in these notebooks requires:
 
 * The latest version of RAPIDS with cuGraph.
-  * Download via Docker, Conda (See (__Getting Started__)[https://rapids.ai/start.html])
+  * Download via Docker, Conda (See [__Getting Started__](https://rapids.ai/start.html))
   
 * cuGraph is dependent on the latest version of cuDF.  Please install all components of RAPIDS 
 * Python 3.6+
