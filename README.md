@@ -43,7 +43,7 @@
 | cuGraph | [Subgraph Extraction](cugraph/community/Sungraph-Extraction.ipynb) | Compute a subgraph of the existing graph including only the specified vertices |
 | cuGraph | [Triangle Counting](cugraph/community/Triangle-Counting.ipynb) | Demonstration of using both NetworkX and cuGraph  to compute the the number of Triangles in our test dataset |
 | cuGraph | [Connected Components](cugraph/components/ConnectedComponents.ipynb) | Find weakly and strongly connected components in a graph     |
-| cuGraph | [K-Core](cugraphcores/kcore.ipynb)                           | Extracts the K-core cluster                                  |
+| cuGraph | [K-Core](cugraph/cores/kcore.ipynb)                          | Extracts the K-core cluster                                  |
 | cuGraph | [Core Number](cugraph/cores/core-number.ipynb)               | Computer the Core number for each vertex in a graph          |
 | cuGraph | [Pagerank](cugraph/link_analysis/Pagerank.ipynb)             | Demonstration of using both NetworkX and cuGraph to compute the PageRank of each vertex in our test dataset |
 | cuGraph | [Jacard Similarity](cugraph/link_prediction/Jaccard-Similarity.ipynb) | Compute vertex similarity score using both:<br />- Jaccard Similarity<br />- Weighted Jaccard |
