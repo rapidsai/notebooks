@@ -13,7 +13,7 @@ This repository contains a collection of Jupyter Notebooks that outline how to r
 |                 | Katz                 | Compute the Katz centrality for every vertex                 |
 | Community       |                      |                                                              |
 |                 | Louvain              | Identify clusters in a graph using the Louvain algorithm     |
-|                 | Spectral-Clustering  | Identify clusters in a  graph using Spectral Clustering with both<br> - Balanced Cut<br> - _Modularity Modularity_ |
+|                 | Spectral-Clustering  | Identify clusters in a  graph using Spectral Clustering with both<br> - Balanced Cut<br> - Modularity Modularity |
 |                 | Subgraph Extraction  | Compute a subgraph of the existing graph including only the specified vertices |
 |                 | Triangle Counting    | Count the number of Triangle in a graph                      |
 | Components      |                      |                                                              |
