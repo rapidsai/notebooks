@@ -6,10 +6,6 @@
 
 This repository contains a collection of Jupyter Notebooks that outline how to run various cuGraph analytics.   The notebooks do not address a complete data science problem.  The notebooks are simply examples of how to run the graph analytics.  Manipulation of the data before or after the graph analytic is not covered here.   Extended, more problem focused, notebooks are being created and available https://github.com/rapidsai/notebooks-extended
 
-
-
-
-
 ## Summary
 
 | Folder            | Notebook             | Description                                                                     |
@@ -25,24 +21,21 @@ This repository contains a collection of Jupyter Notebooks that outline how to r
 |                   | Triangle Counting    | Count the number of Triangle in a graph                                         |
 | Components        |                      |                                                                                 |
 |                   | Connected Components | Find weakly and strongly connected components in a graph                        | 
-
-
-| Link-Prediction   |                      |                                                                                      |
+| Core              |                      |                                                                                 |
+|                   | K-Core               | Extracts the K-core cluster                                                     |
+|                   | Core Number          | Computer the Core number for each vertex in a graph                             |
+| Link Analysis     |                      |                                                                                 |
+|                   | Pagerank             | Compute the PageRank of every vertex in a graph                                 |
+| Link Prediction   |                      |                                                                                 |
 |                   | Jacard Similarity    | Compute vertex similarity score using both:<br />- Jaccard Similarity<br />- Weighted Jaccard |
-|                   | Overlap Similarity   | Compute vertex similarity score using the Overlapp Coefficent                        |
-| Link-Analysis     |                      |                                                                                      |
-|                   | Pagerank             | Compute the PageRank of every vertex in a graph                                      |
-| Traversal         |                      |                                                                                      |
+|                   | Overlap Similarity   | Compute vertex similarity score using the Overlapp Coefficent                   |
+| Traversal         |                      |                                                                                 |
 |                   | BFS                  | Compute the Breadth First Search path from a starting vertex to every other vertex in a graph |
 |                   | SSSP                 | Single Source Shortest Path  - compute the shortest path from a starting vertex to every other vertex |
-
-| Community         |                      |                                                                                       |
-|                   | Triangle Counting    | Count the number of Triangle in a graph                      |
-
-
-
-
-| Renumbering         | Renumber the vertex IDs in a graph                           |
+| Structure         |                      |                                                                                 |
+|                   | Renumbering          | Renumber the vertex IDs in a graph (two sample notebooks)                       |
+|                   | Symmetrize           | Symmetrize the edges in a graph                                                 |
+|-------------------| ------------------- -| ------------------------------------------------------------------------------- |
 
 
 
@@ -52,7 +45,8 @@ This repository contains a collection of Jupyter Notebooks that outline how to r
 Running the example in these notebooks requires:
 
 * The latest version of RAPIDS with cuGraph.
-  * Download via Docker, Conda, or PIP  
+  * Download via Docker, Conda (See (__Getting Started__)[https://rapids.ai/start.html])
+  
 * cuGraph is dependent on the latest version of cuDF.  Please install all components of RAPIDS 
 * Python 3.6+
 * A system with an NVIDIA GPU:  Pascal architecture or better
@@ -64,7 +58,7 @@ Running the example in these notebooks requires:
 #### Notebook Credits
 
 - Original Authors: Bradley Rees
-- Last Edit: 05/10/2019
+- Last Edit: 10/29/2019
 
 RAPIDS Versions: 0.7.0    
 
