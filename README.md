@@ -45,7 +45,7 @@
 | cuGraph | [Connected Components](cugraph/components/ConnectedComponents.ipynb) | Find weakly and strongly connected components in a graph     |
 | cuGraph | [K-Core](cugraphcores/kcore.ipynb)                           | Extracts the K-core cluster                                  |
 | cuGraph | [Core Number](cugraph/cores/core-number.ipynb)               | Computer the Core number for each vertex in a graph          |
-|         | [Pagerank](cugraph/link_analysis/Pagerank.ipynb)             | Demonstration of using both NetworkX and cuGraph to compute the PageRank of each vertex in our test dataset |
+| cuGraph | [Pagerank](cugraph/link_analysis/Pagerank.ipynb)             | Demonstration of using both NetworkX and cuGraph to compute the PageRank of each vertex in our test dataset |
 | cuGraph | [Jacard Similarity](cugraph/link_prediction/Jaccard-Similarity.ipynb) | Compute vertex similarity score using both:<br />- Jaccard Similarity<br />- Weighted Jaccard |
 | cuGraph | [Overlap Similarity](cugraph/link_prediction/Overlap-Similarity.ipynb) | Compute vertex similarity score using the Overlap Coefficient |
 | cuGraph | [BFS](cugraph/traversal/BFS.ipynb)                           | Demonstration of using cuGraph to computer the Breadth First Search space from a given vertex to all other in our training graph |
