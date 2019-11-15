@@ -1,6 +1,7 @@
 # Notebooks 0.11.0 (TBD)
 
 ## New Features
+- PR #251 New cuML metrics and MBSGD classifier and regressor notebooks
 
 ## Improvements
 
@@ -10,7 +11,7 @@
 # Notebooks 0.10.0 (15 October 2019)
 
 ## New Features
-
+- PR #216 New cuSpatial trajectory clustering notebook
 - PR #211 New TSNE demo notebook
 - PR #230 New SVM demo notebook
 
@@ -20,7 +21,6 @@
 - Updated DBScan and K-Means notebooks to work with cudf's new cupy-backed Series
 
 ## Bug Fixes
-
 - PR #222 Updated imports to match current cudf, cleaned up notebook text.
 - PR #204 Bug fix for kmeans notebook
 
