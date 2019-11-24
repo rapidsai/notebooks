@@ -1,5 +1,7 @@
 # RAPIDS Notebooks and Utilities
 
+* For additional, community driven notebooks, which will include our blogs, tutorials, workflows, and more intricate examples, please see the [Notebooks Contrib Repo](https://github.com/rapidsai/notebooks-contrib)
+
 ## XGBoost Notebook
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -79,4 +81,4 @@
 
 * `utils`: contains a set of useful scripts for interacting with RAPIDS
 
-* For additional, community driven notebooks, which will include our blogs, tutorials, workflows, and more intricate examples, please see the [Notebooks Contrib Repo](https://github.com/rapidsai/notebooks-contrib)
+
