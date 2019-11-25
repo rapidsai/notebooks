@@ -1,12 +1,21 @@
-# RAPIDS Notebooks and Utilities
+# RAPIDS Notebooks
+## Intro
+These notebooks provide examples of how to use RAPIDS libraries, like cuML and cuGraph.  These notebooks are designed to be self contained with the [RAPIDS Docker Container](https://hub.docker.com/r/rapidsai/rapidsai/) and [RAPIDS Nightly Docker Containers](https://hub.docker.com/r/rapidsai/rapidsai-nightly) and can run on airgapped systems.  You can quickly get this continaer using the install guide from the [RAPIDS.ai Getting Started page](https://rapids.ai/start.html#get-rapids)
 
-* For additional, community driven notebooks, which will include our blogs, tutorials, workflows, and more intricate examples, please see the [Notebooks Contrib Repo](https://github.com/rapidsai/notebooks-contrib)
+### More notebooks in [Notebooks Contrib Repo](https://github.com/rapidsai/notebooks-contrib)
+For additional, community driven notebooks, which will include our blogs, tutorials, workflows, and more intricate examples, please see the [Notebooks Contrib Repo](https://github.com/rapidsai/notebooks-contrib).  These notebooks use generally use real world data sets.
 
-## XGBoost Notebook
+If you want to include these notebooks with your RAPIDS Docker pull's Jupyter Lab, [please follw these instructions](https://github.com/rapidsai/notebooks-contrib/blob/master/BUILD.md).   
+
+If you're using Conda, you can just `git clone https://github.com/rapidsai/notebooks-contrib.git` 
+
+## RAPIDS Notebooks and Utilities
+
+### XGBoost Notebook
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | XGBoost   | [XGBoost Demo](xgboost/XGBoost_Demo.ipynb)           | This notebook shows the acceleration one can gain by using GPUs with XGBoost in RAPIDS.                                                                                                                                       |
-## CuML Notebooks
+### CuML Notebooks
  The cuML notebooks showcase how to use the machine learning algorithms implemented in cuML along with the advantages of using cuML over scikit-learn. These notebooks compare the time required and the performance of the algorithms. Below are a list of such algorithms:
 
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
@@ -33,13 +42,13 @@
 | cuML      | [UMAP_Demo_Supervised](cuml/umap_supervised_demo.ipynb)   | Demostration of UMAP supervised training.  Uses a set of labels to perform supervised dimensionality reduction. UMAP can also be trained on datasets with incomplete labels, by using a label of "-1" for unlabeled samples. |
 
 
-## CuDF Notebooks
+### CuDF Notebooks
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | cuDF      | [notebooks_Apply_Operations_in_cuDF](cudf/notebooks_Apply_Operations_in_cuDF.ipynb)            | This notebook showcases two special methods where cuDF goes beyond the Pandas library: apply_rows and apply_chunk functions. They utilized the Numba library to accelerate the data transformation via GPU in parallel.                                                                            |
 | cuDF      | [notebooks_numba_cuDF_integration](cudf/notebooks_numba_cuDF_integration.ipynb)               | This notebook showcases how to use Numba CUDA to accelerate cuDF data transformation and how to step by step accelerate it using CUDA programming tricks                                                                                                                          |
 
-## CuGraph Notebooks
+### CuGraph Notebooks
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | cuGraph   | [BFS](cugraph/BFS.ipynb)                    | Demonstration of using cuGraph to computer the Bredth First Search space from a given vertex to all other in our training graph                                                                                               |
@@ -53,14 +62,14 @@
 | cuGraph   | [Vertex-Similarity](cugraph/Vertex-Similarity.ipynb)      | Demonstration of using cuGraph to compute vertex similarity using both the Jaccard Similarity and the Overlap Coefficient.                                                                                                    |
 | cuGraph   | [Weighted-Jaccard](cugraph/Weighted-Jaccard.ipynb)       | Demonstration of using cuGraph to compute the Weighted Jaccard Similarity metric on our training dataset.                                                                                                                     |
 
-## Tutorial with an End to End workflow
+### Tutorial with an End to End workflow
 
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Tutorials | [DBSCAN_demo_full](tutorials/DBSCAN_Demo_Full.ipynb)       | Demonstration of how to use DBSCAN - a popular clustering algorithm - and how to use the GPU accelerated implementation of this algorithm in RAPIDS.                                                                               |
 | Tutorials | [HoltWinters_demo_full](tutorials/holtwinters_demo_full.ipynb)   | Demonstration of how to use Holt-Winters, a time-series forecasting algorithm, on a dataset to make GPU accelerated out-of-sample predictions.      |
 
-## Utils Scripts
+### Utils Scripts
 | Folder    | Script Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | utils     | dask-cluster.py        | launches a configured Dask cluster (a set of nodes) for use within a notebook                                                                                                                                                 |
@@ -70,7 +79,7 @@
 | utils     | start-jupyter.sh       | starts a JupyterLab environment for interacting with, and running, notebooks                                                                                                                                                  |
 | utils     | stop-jupyter.sh        | identifies all process IDs associated with Jupyter and kills them                                                                                                                                                             |
 
-## Documentation (WIP)
+### Documentation
 | Folder    | Document Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | docs      | ngc-readme             |                                                                                                                                                                                                                               |
@@ -80,5 +89,3 @@
 * The `cuml` folder also includes a small subset of the Mortgage Dataset used in the notebooks and the full image set from the Fashion MNIST dataset.
 
 * `utils`: contains a set of useful scripts for interacting with RAPIDS
-
-
