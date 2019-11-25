@@ -52,21 +52,21 @@ If you're using Conda, you can just `git clone https://github.com/rapidsai/noteb
 
 | Folder  | Notebook Title                                               | Description                                                  |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| cuGraph | [Katz](cugraph/centrality/Katz.ipynb)                        | Compute the Katz centrality for every vertex                 |
-| cuGraph | [Louvain](cugraph/community/Louvain.ipynb)                   | Demonstration of using cuGraph to identify clusters in a test graph using the Louvain algorithm |
-| cuGraph | [Spectral-Clustering](cugraph/community/Spectral-Clustering.ipynb) | Demonstration of using cuGraph to identify clusters in a test graph using Spectral Clustering using both the (A) Balance Cut and (B) the Modularity Maximization quality metrics |
-| cuGraph | [Subgraph Extraction](cugraph/community/Sungraph-Extraction.ipynb) | Compute a subgraph of the existing graph including only the specified vertices |
-| cuGraph | [Triangle Counting](cugraph/community/Triangle-Counting.ipynb) | Demonstration of using both NetworkX and cuGraph  to compute the the number of Triangles in our test dataset |
-| cuGraph | [Connected Components](cugraph/components/ConnectedComponents.ipynb) | Find weakly and strongly connected components in a graph     |
-| cuGraph | [K-Core](cugraph/cores/kcore.ipynb)                          | Extracts the K-core cluster                                  |
-| cuGraph | [Core Number](cugraph/cores/core-number.ipynb)               | Computer the Core number for each vertex in a graph          |
-| cuGraph | [Pagerank](cugraph/link_analysis/Pagerank.ipynb)             | Demonstration of using both NetworkX and cuGraph to compute the PageRank of each vertex in our test dataset |
-| cuGraph | [Jacard Similarity](cugraph/link_prediction/Jaccard-Similarity.ipynb) | Compute vertex similarity score using both:<br />- Jaccard Similarity<br />- Weighted Jaccard |
-| uGraph  | [Overlap Similarity](cugraph/link_prediction/Overlap-Similarity.ipynb) | Compute vertex similarity score using the Overlap Coefficient |
-| cuGraph | [BFS](cugraph/traversal/BFS.ipynb)                           | Demonstration of using cuGraph to computer the Breadth First Search space from a given vertex to all other in our training graph |
-| cuGraph | [SSSP](cugraph/traversal/SSSP.ipynb)                         | Demonstration of using cuGraph to computer the The Shortest Path from a given vertex to all other in our training graph |
-| cuGraph | [Renumber](cugraph/structure/Renumber.ipynb)                 | Demonstrate of using the renumbering features to assigned new vertex IDs to the test graph.  This is useful for when the data sets is  non-contiguous or not integer values |
-| cuGraph | [Symmetrize](cugraph/structure/Symmetrize.ipynb)             | Symmetrize the edges in a graph                              |
+| cuGraph -> centrality| [Katz](cugraph/centrality/Katz.ipynb)                        | Compute the Katz centrality for every vertex                 |
+| cuGraph -> community| [Louvain](cugraph/community/Louvain.ipynb)                   | Demonstration of using cuGraph to identify clusters in a test graph using the Louvain algorithm |
+| cuGraph -> community| [Spectral-Clustering](cugraph/community/Spectral-Clustering.ipynb) | Demonstration of using cuGraph to identify clusters in a test graph using Spectral Clustering using both the (A) Balance Cut and (B) the Modularity Maximization quality metrics |
+| cuGraph -> community| [Subgraph Extraction](cugraph/community/Sungraph-Extraction.ipynb) | Compute a subgraph of the existing graph including only the specified vertices |
+| cuGraph -> community| [Triangle Counting](cugraph/community/Triangle-Counting.ipynb) | Demonstration of using both NetworkX and cuGraph  to compute the the number of Triangles in our test dataset |
+| cuGraph -> components| [Connected Components](cugraph/components/ConnectedComponents.ipynb) | Find weakly and strongly connected components in a graph     |
+| cuGraph -> cores| [K-Core](cugraph/cores/kcore.ipynb)                          | Extracts the K-core cluster                                  |
+| cuGraph -> cores | [Core Number](cugraph/cores/core-number.ipynb)               | Computer the Core number for each vertex in a graph          |
+| cuGraph -> link_analysis | [Pagerank](cugraph/link_analysis/Pagerank.ipynb)             | Demonstration of using both NetworkX and cuGraph to compute the PageRank of each vertex in our test dataset |
+| cuGraph -> link_prediction | [Jacard Similarity](cugraph/link_prediction/Jaccard-Similarity.ipynb) | Compute vertex similarity score using both:<br />- Jaccard Similarity<br />- Weighted Jaccard |
+| cuGraph -> link_prediction | [Overlap Similarity](cugraph/link_prediction/Overlap-Similarity.ipynb) | Compute vertex similarity score using the Overlap Coefficient |
+| cuGraph -> traversal| [BFS](cugraph/traversal/BFS.ipynb)                           | Demonstration of using cuGraph to computer the Breadth First Search space from a given vertex to all other in our training graph |
+| cuGraph -> traversal | [SSSP](cugraph/traversal/SSSP.ipynb)                         | Demonstration of using cuGraph to computer the The Shortest Path from a given vertex to all other in our training graph |
+| cuGraph -> structure| [Renumber](cugraph/structure/Renumber.ipynb)                 | Demonstrate of using the renumbering features to assigned new vertex IDs to the test graph.  This is useful for when the data sets is  non-contiguous or not integer values |
+| cuGraph -> structure| [Symmetrize](cugraph/structure/Symmetrize.ipynb)             | Symmetrize the edges in a graph                              |
 
 ### Tutorial with an End to End workflow
 
