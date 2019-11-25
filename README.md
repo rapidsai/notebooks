@@ -49,18 +49,24 @@ If you're using Conda, you can just `git clone https://github.com/rapidsai/noteb
 | cuDF      | [notebooks_numba_cuDF_integration](cudf/notebooks_numba_cuDF_integration.ipynb)               | This notebook showcases how to use Numba CUDA to accelerate cuDF data transformation and how to step by step accelerate it using CUDA programming tricks                                                                                                                          |
 
 ### CuGraph Notebooks
-| Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
-|-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| cuGraph   | [BFS](cugraph/BFS.ipynb)                    | Demonstration of using cuGraph to computer the Bredth First Search space from a given vertex to all other in our training graph                                                                                               |
-| cuGraph   | [Connected Components](cugraph/ConnectedComponents.ipynb)      | Demonstration of using cuGraph to compute weakly and strongly connected components in a test graph.                                                                                                                  |
-| cuGraph   | [Louvain](cugraph/Louvain.ipynb)                | Demonstration of using cuGraph to identify clusters in a test graph using the Louvain algorithm                                                                                                                               |
-| cuGraph   | [Pagerank](cugraph/Pagerank.ipynb)               | Demonstration of using both NetworkX and cuGraph to compute the PageRank of each vertex in our test dataset                                                                                                                   |
-| cuGraph   | [Renumber](cugraph/Renumber.ipynb)               | Demonstrate of using the renumbering features to assigned new vertex IDs to the test graph.  This is useful for when the data sets is  non-contiguous or not integer values                                                   |
-| cuGraph   | [SSSP](cugraph/SSSP.ipynb)                   | Demonstration of using cuGraph to computer the The Shortest Path from a given vertex to all other in our training graph                                                                                                       |
-| cuGraph   | [Spectral-Clustering](cugraph/Spectral-Clustering.ipynb)    | Demonstration of using cuGraph to identify clusters in a test graph using Spectral Clustering using both the (A) Balance Cut and (B) the Modularity Maximization quality metrics                                              |
-| cuGraph   | [Triangle Counting](cugraph/Triangle-Counting.ipynb)      | Demonstration of using both NetworkX and cuGraph  to compute the the number of Triangles in our test dataset                                                                                                                  |
-| cuGraph   | [Vertex-Similarity](cugraph/Vertex-Similarity.ipynb)      | Demonstration of using cuGraph to compute vertex similarity using both the Jaccard Similarity and the Overlap Coefficient.                                                                                                    |
-| cuGraph   | [Weighted-Jaccard](cugraph/Weighted-Jaccard.ipynb)       | Demonstration of using cuGraph to compute the Weighted Jaccard Similarity metric on our training dataset.                                                                                                                     |
+
+| Folder  | Notebook Title                                               | Description                                                  |
+| ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| cuGraph | [Katz](cugraph/centrality/Katz.ipynb)                        | Compute the Katz centrality for every vertex                 |
+| cuGraph | [Louvain](cugraph/community/Louvain.ipynb)                   | Demonstration of using cuGraph to identify clusters in a test graph using the Louvain algorithm |
+| cuGraph | [Spectral-Clustering](cugraph/community/Spectral-Clustering.ipynb) | Demonstration of using cuGraph to identify clusters in a test graph using Spectral Clustering using both the (A) Balance Cut and (B) the Modularity Maximization quality metrics |
+| cuGraph | [Subgraph Extraction](cugraph/community/Sungraph-Extraction.ipynb) | Compute a subgraph of the existing graph including only the specified vertices |
+| cuGraph | [Triangle Counting](cugraph/community/Triangle-Counting.ipynb) | Demonstration of using both NetworkX and cuGraph  to compute the the number of Triangles in our test dataset |
+| cuGraph | [Connected Components](cugraph/components/ConnectedComponents.ipynb) | Find weakly and strongly connected components in a graph     |
+| cuGraph | [K-Core](cugraph/cores/kcore.ipynb)                          | Extracts the K-core cluster                                  |
+| cuGraph | [Core Number](cugraph/cores/core-number.ipynb)               | Computer the Core number for each vertex in a graph          |
+| cuGraph | [Pagerank](cugraph/link_analysis/Pagerank.ipynb)             | Demonstration of using both NetworkX and cuGraph to compute the PageRank of each vertex in our test dataset |
+| cuGraph | [Jacard Similarity](cugraph/link_prediction/Jaccard-Similarity.ipynb) | Compute vertex similarity score using both:<br />- Jaccard Similarity<br />- Weighted Jaccard |
+| uGraph  | [Overlap Similarity](cugraph/link_prediction/Overlap-Similarity.ipynb) | Compute vertex similarity score using the Overlap Coefficient |
+| cuGraph | [BFS](cugraph/traversal/BFS.ipynb)                           | Demonstration of using cuGraph to computer the Breadth First Search space from a given vertex to all other in our training graph |
+| cuGraph | [SSSP](cugraph/traversal/SSSP.ipynb)                         | Demonstration of using cuGraph to computer the The Shortest Path from a given vertex to all other in our training graph |
+| cuGraph | [Renumber](cugraph/structure/Renumber.ipynb)                 | Demonstrate of using the renumbering features to assigned new vertex IDs to the test graph.  This is useful for when the data sets is  non-contiguous or not integer values |
+| cuGraph | [Symmetrize](cugraph/structure/Symmetrize.ipynb)             | Symmetrize the edges in a graph                              |
 
 ### Tutorial with an End to End workflow
 
