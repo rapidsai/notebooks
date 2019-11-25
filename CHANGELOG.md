@@ -11,6 +11,7 @@
 
 ## New Features
 - PR #251 New cuML metrics and MBSGD classifier and regressor notebooks
+- PR #260 Restructured cuGraph and added: Katz, K-Core, and utilities
 
 ## Improvements
 
