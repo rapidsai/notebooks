@@ -2,6 +2,7 @@
 
 ## New Features
 - PR #251 New cuML metrics and MBSGD classifier and regressor notebooks
+- PR #256 New Random Forest Classification and Pickling notebook
 
 ## Improvements
 
