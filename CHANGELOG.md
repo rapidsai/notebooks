@@ -1,4 +1,4 @@
-# Notebooks 0.11.0 (TBD)
+# Notebooks 0.11.0 (11 Dec 2019)
 
 ## New Features
 - PR #251 New cuML metrics and MBSGD classifier and regressor notebooks
