@@ -50,6 +50,7 @@ If you're using Conda, you can just `git clone https://github.com/rapidsai/noteb
 | cuDF      | [notebooks_numba_cuDF_integration](cudf/notebooks_numba_cuDF_integration.ipynb)               | This notebook showcases how to use Numba CUDA to accelerate cuDF data transformation and how to step by step accelerate it using CUDA programming tricks                                                                                                                          |
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## CuGraph Notebooks
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -66,6 +67,8 @@ If you're using Conda, you can just `git clone https://github.com/rapidsai/noteb
 
 ## Tutorial with an End to End workflow
 =======
+=======
+>>>>>>> bcdac1526bd1a0a2ac5f630cc0330cd2a82f40d7
 ### CuGraph Notebooks
 
 | Folder  | Notebook Title                                               | Description                                                  |
@@ -87,7 +90,10 @@ If you're using Conda, you can just `git clone https://github.com/rapidsai/noteb
 | cuGraph -> structure| [Symmetrize](cugraph/structure/Symmetrize.ipynb)             | Symmetrize the edges in a graph                              |
 
 ### Tutorial with an End to End workflow
+<<<<<<< HEAD
 >>>>>>> 398c31c85730779d3daa28128b03caf298e03677
+=======
+>>>>>>> bcdac1526bd1a0a2ac5f630cc0330cd2a82f40d7
 
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -115,7 +121,10 @@ If you're using Conda, you can just `git clone https://github.com/rapidsai/noteb
 
 * `utils`: contains a set of useful scripts for interacting with RAPIDS
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 * For additional, community driven notebooks, which will include our blogs, tutorials, workflows, and more intricate examples, please see the [Notebooks Contrib Repo](https://github.com/rapidsai/notebooks-contrib)
 =======
 >>>>>>> 398c31c85730779d3daa28128b03caf298e03677
+=======
+>>>>>>> bcdac1526bd1a0a2ac5f630cc0330cd2a82f40d7
