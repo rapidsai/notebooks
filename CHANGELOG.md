@@ -1,6 +1,36 @@
-# Notebooks 0.9.0 (21 Aug 2019)
+# Notebooks 0.11.0 (11 Dec 2019)
 
 ## New Features
+- PR #251 New cuML metrics and MBSGD classifier and regressor notebooks
+- PR #256 New Random Forest Classification and Pickling notebook
+- PR #260 Restructured cuGraph and added: Katz, K-Core, and utilities
+
+## Improvements
+
+## Bug Fixes
+
+
+# Notebooks 0.10.0 (15 October 2019)
+
+## New Features
+- PR #216 New cuSpatial trajectory clustering notebook
+- PR #211 New TSNE demo notebook
+- PR #230 New SVM demo notebook
+
+## Improvements
+- PR #241 K-Means uses new cuml.dask.datasets.make_blobs generator
+- Various notebook text improvements
+- Updated DBScan and K-Means notebooks to work with cudf's new cupy-backed Series
+
+## Bug Fixes
+- PR #222 Updated imports to match current cudf, cleaned up notebook text.
+- PR #204 Bug fix for kmeans notebook
+
+# Notebooks 0.9.0 (16 August 2019)
+
+## New Features
+- PR #192 New Holt-Winters demo notebook
+- PR #194 New Forest Inference Library demo notebook
 
 ## Improvements
 
@@ -27,12 +57,9 @@
 - PR #133 Adding cuGraph notebooks
 
 ## Improvements
-- PR #144  Added top level CHANGELOG.  Added a README to cugraph  
+- PR #144  Added top level CHANGELOG.  Added a README to cugraph
 
 ## Bug Fixes
 
 
 # Notebooks 0.6.0 (22 Mar 2019)
-
-
-
