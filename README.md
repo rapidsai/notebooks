@@ -5,7 +5,7 @@ These notebooks provide examples of how to use RAPIDS libraries, like cuML and c
 ### More notebooks in [Notebooks Contrib Repo](https://github.com/rapidsai/notebooks-contrib)
 For additional, community driven notebooks, which will include our blogs, tutorials, workflows, and more intricate examples, please see the [Notebooks Contrib Repo](https://github.com/rapidsai/notebooks-contrib).  These notebooks use generally use real world data sets.
 
-If you want to include these notebooks with your RAPIDS Docker pull's Jupyter Lab, [please follw these instructions](https://github.com/rapidsai/notebooks-contrib/blob/master/BUILD.md).   
+If you want to include these notebooks with your RAPIDS Docker pull's Jupyter Lab, [please follow these instructions](https://github.com/rapidsai/notebooks-contrib/blob/master/BUILD.md).   
 
 If you're using Conda, you can just `git clone https://github.com/rapidsai/notebooks-contrib.git` 
 
@@ -40,7 +40,7 @@ If you're using Conda, you can just `git clone https://github.com/rapidsai/noteb
 | cuML      | [TSVD_Demo](cuml/tsvd_demo.ipynb	)              | This notebook showcases truncated singular value decomposition (tsvd) algorithm which like PCA performs both prediction and transformation of the converted dataset into the original data using `fit_transform` and `inverse_transform` functions respectively                                                                                                     |
 | cuML      | [UMAP_Demo](cuml/umap_demo.ipynb)              | The uniform manifold approximation & projection algorithm is compared with the original author's equivalent non-GPU Python implementation using `fit` and `transform` functions                       |
 | cuML      | [UMAP_Demo_Graphed](cuml/umap_demo_graphed.ipynb)      | Demonstration of cuML uniform manifold approximation & projection algorithm's supervised approach against mortgage dataset and comparison of results against the original author's equivalent non-GPU \Python implementation. |
-| cuML      | [UMAP_Demo_Supervised](cuml/umap_supervised_demo.ipynb)   | Demostration of UMAP supervised training.  Uses a set of labels to perform supervised dimensionality reduction. UMAP can also be trained on datasets with incomplete labels, by using a label of "-1" for unlabeled samples. |
+| cuML      | [UMAP_Demo_Supervised](cuml/umap_supervised_demo.ipynb)   | Demonstration of UMAP supervised training.  Uses a set of labels to perform supervised dimensionality reduction. UMAP can also be trained on datasets with incomplete labels, by using a label of "-1" for unlabeled samples. |
 
 
 ### CuDF Notebooks
@@ -71,6 +71,7 @@ If you're using Conda, you can just `git clone https://github.com/rapidsai/noteb
 
 ### Tutorial with an End to End workflow
 
+
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Tutorials | [DBSCAN_demo_full](tutorials/DBSCAN_Demo_Full.ipynb)       | Demonstration of how to use DBSCAN - a popular clustering algorithm - and how to use the GPU accelerated implementation of this algorithm in RAPIDS.                                                                               |
@@ -96,3 +97,4 @@ If you're using Conda, you can just `git clone https://github.com/rapidsai/noteb
 * The `cuml` folder also includes a small subset of the Mortgage Dataset used in the notebooks and the full image set from the Fashion MNIST dataset.
 
 * `utils`: contains a set of useful scripts for interacting with RAPIDS
+
