@@ -14,7 +14,7 @@ This repository contains a collection of Jupyter Notebooks that outline how to r
 | Community       |                                                              |                                                              |
 |                 | [Louvain](community/Louvain.ipynb)                           | Identify clusters in a graph using the Louvain algorithm     |
 |                 | [Spectral-Clustering](community/Spectral-Clustering.ipynb)   | Identify clusters in a  graph using Spectral Clustering with both<br> - Balanced Cut<br> - Modularity Modularity |
-|                 | [Subgraph Extraction](community/Sungraph-Extraction.ipynb)   | Compute a subgraph of the existing graph including only the specified vertices |
+|                 | [Subgraph Extraction](community/Subgraph-Extraction.ipynb)   | Compute a subgraph of the existing graph including only the specified vertices |
 |                 | [Triangle Counting](community/Triangle-Counting.ipynb)       | Count the number of Triangle in a graph                      |
 | Components      |                                                              |                                                              |
 |                 | [Connected Components](components/ConnectedComponents.ipynb) | Find weakly and strongly connected components in a graph     |
