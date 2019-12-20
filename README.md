@@ -1,6 +1,6 @@
 # RAPIDS Notebooks
 ## Intro
-These notebooks provide examples of how to use RAPIDS libraries, like cuML and cuGraph.  These notebooks are designed to be self contained with the [RAPIDS Docker Container](https://hub.docker.com/r/rapidsai/rapidsai/) and [RAPIDS Nightly Docker Containers](https://hub.docker.com/r/rapidsai/rapidsai-nightly) and can run on airgapped systems.  You can quickly get this continaer using the install guide from the [RAPIDS.ai Getting Started page](https://rapids.ai/start.html#get-rapids)
+These notebooks provide examples of how to use RAPIDS libraries, like cuML and cuGraph.  These notebooks are designed to be self contained with the [RAPIDS Docker Container](https://hub.docker.com/r/rapidsai/rapidsai/) and [RAPIDS Nightly Docker Containers](https://hub.docker.com/r/rapidsai/rapidsai-nightly) and can run on airgapped systems.  You can quickly get this container using the install guide from the [RAPIDS.ai Getting Started page](https://rapids.ai/start.html#get-rapids)
 
 ### More notebooks in [Notebooks Contrib Repo](https://github.com/rapidsai/notebooks-contrib)
 For additional, community driven notebooks, which will include our blogs, tutorials, workflows, and more intricate examples, please see the [Notebooks Contrib Repo](https://github.com/rapidsai/notebooks-contrib).  These notebooks use generally use real world data sets.
@@ -56,13 +56,13 @@ If you're using Conda, you can just `git clone https://github.com/rapidsai/noteb
 | cuGraph -> centrality| [Katz](cugraph/centrality/Katz.ipynb)                        | Compute the Katz centrality for every vertex                 |
 | cuGraph -> community| [Louvain](cugraph/community/Louvain.ipynb)                   | Demonstration of using cuGraph to identify clusters in a test graph using the Louvain algorithm |
 | cuGraph -> community| [Spectral-Clustering](cugraph/community/Spectral-Clustering.ipynb) | Demonstration of using cuGraph to identify clusters in a test graph using Spectral Clustering using both the (A) Balance Cut and (B) the Modularity Maximization quality metrics |
-| cuGraph -> community| [Subgraph Extraction](cugraph/community/Sungraph-Extraction.ipynb) | Compute a subgraph of the existing graph including only the specified vertices |
+| cuGraph -> community| [Subgraph Extraction](cugraph/community/Subgraph-Extraction.ipynb) | Compute a subgraph of the existing graph including only the specified vertices |
 | cuGraph -> community| [Triangle Counting](cugraph/community/Triangle-Counting.ipynb) | Demonstration of using both NetworkX and cuGraph  to compute the the number of Triangles in our test dataset |
 | cuGraph -> components| [Connected Components](cugraph/components/ConnectedComponents.ipynb) | Find weakly and strongly connected components in a graph     |
 | cuGraph -> cores| [K-Core](cugraph/cores/kcore.ipynb)                          | Extracts the K-core cluster                                  |
 | cuGraph -> cores | [Core Number](cugraph/cores/core-number.ipynb)               | Computer the Core number for each vertex in a graph          |
 | cuGraph -> link_analysis | [Pagerank](cugraph/link_analysis/Pagerank.ipynb)             | Demonstration of using both NetworkX and cuGraph to compute the PageRank of each vertex in our test dataset |
-| cuGraph -> link_prediction | [Jacard Similarity](cugraph/link_prediction/Jaccard-Similarity.ipynb) | Compute vertex similarity score using both:<br />- Jaccard Similarity<br />- Weighted Jaccard |
+| cuGraph -> link_prediction | [Jaccard Similarity](cugraph/link_prediction/Jaccard-Similarity.ipynb) | Compute vertex similarity score using both:<br />- Jaccard Similarity<br />- Weighted Jaccard |
 | cuGraph -> link_prediction | [Overlap Similarity](cugraph/link_prediction/Overlap-Similarity.ipynb) | Compute vertex similarity score using the Overlap Coefficient |
 | cuGraph -> traversal| [BFS](cugraph/traversal/BFS.ipynb)                           | Demonstration of using cuGraph to computer the Breadth First Search space from a given vertex to all other in our training graph |
 | cuGraph -> traversal | [SSSP](cugraph/traversal/SSSP.ipynb)                         | Demonstration of using cuGraph to computer the The Shortest Path from a given vertex to all other in our training graph |
