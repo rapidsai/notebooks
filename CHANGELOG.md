@@ -1,6 +1,7 @@
 # Notebooks 0.12.0 (TBD)
 
 ## New Features
+- PR #296 Add SVR notebook
 
 ## Improvements
 
