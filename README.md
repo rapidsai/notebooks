@@ -7,7 +7,7 @@ For additional, community-driven notebooks, which will include our blogs, tutori
 
 If you want to include these notebooks with your RAPIDS Docker pull's Jupyter Lab, [please follow these instructions](https://github.com/rapidsai/notebooks-contrib/blob/master/BUILD.md).   
 
-If you're using Conda, you can just `git clone https://github.com/rapidsai/notebooks-contrib.git` 
+If you're using Conda, you can just `git clone https://github.com/rapidsai/notebooks-contrib.git`
 
 ## RAPIDS Notebooks and Utilities
 
@@ -35,7 +35,7 @@ If you're using Conda, you can just `git clone https://github.com/rapidsai/noteb
 | cuML      | [Random Forest Multi-node / Multi-GPU](cuml/random_forest_mnmg_demo.ipynb)   | Demonstrates how to fit Random Forest models using multiple GPUs via Dask. |
 | cuML      | [Ridge Regression Demo](cuml/ridge_regression_demo.ipynb)  | This notebook includes code examples of ridge regression, and it showcases the `fit` and `predict` functions.                                                                                                                                          |
 | cuML      | [SGD_Demo](cuml/sgd_demo.ipynb)               | The stochastic gradient descent algorithm is demonstrated in the notebook using `fit` and `predict` functions                                                                        |
-| cuML      | [SVM_Demo](cuml/svm_demo.ipynb)               | Binary Support Vector Machine classification is demonstrated in this notebook using `fit` and `predict` functions. |
+| cuML      | [SVM_Demo](cuml/svm_demo.ipynb)               | Binary Support Vector Machine classification and Support Vector Regression is demonstrated in this notebook using `fit` and `predict` functions. |
 | cuML      | [TSNE_Demo](cuml/tsne_demo.ipynb)               | In this notebook, T-Distributed Stochastic Neighborhood Embedding is demonstrated applying the Barnes Hut method on the Fashion MNIST dataset using our `fit_transform` function                                                                      |
 | cuML      | [TSVD_Demo](cuml/tsvd_demo.ipynb	)              | This notebook showcases truncated singular value decomposition (tsvd) algorithm which like PCA performs both prediction and transformation of the converted dataset into the original data using `fit_transform` and `inverse_transform` functions respectively                                                                                                     |
 | cuML      | [UMAP_Demo](cuml/umap_demo.ipynb)              | The uniform manifold approximation & projection algorithm is compared with the original author's equivalent non-GPU Python implementation using `fit` and `transform` functions                       |
