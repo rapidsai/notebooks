@@ -71,6 +71,7 @@ If you're using Conda, you can just `git clone https://github.com/rapidsai/noteb
 
 ### Tutorial with an End to End workflow
 
+
 | Folder    | Notebook Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Tutorials | [DBSCAN_demo_full](tutorials/DBSCAN_Demo_Full.ipynb)       | Demonstration of how to use DBSCAN - a popular clustering algorithm - and how to use the GPU accelerated implementation of this algorithm in RAPIDS.                                                                               |
@@ -96,3 +97,4 @@ If you're using Conda, you can just `git clone https://github.com/rapidsai/noteb
 * The `cuml` folder also includes a small subset of the Mortgage Dataset used in the notebooks and the full image set from the Fashion MNIST dataset.
 
 * `utils`: contains a set of useful scripts for interacting with RAPIDS
+

@@ -7,17 +7,24 @@
 ## Bug Fixes
 
 
-# Notebooks 0.12.0 (TBD)
+# Notebooks 0.12.0 (05 Feb 2020)
 
 ## New Features
 - PR #296 Add SVR notebook
 
 ## Improvements
+- PR #310 Updates to BFS notebook and outputs
+- PR #309 updated cudf notebooks from `.to_gpu_array` -> `.values` pass by reference
+- PR #300 added outputs for cugraph notebooks
+- PR #304 Updated old docs links to new docs symlinks
+- PR #291 Updated kcore notebook
 
 ## Bug Fixes
+- PR #305 Updates to several cuml and cugraph notebooks due to 0.12 API change
+- PR #282 Removed KNN MNMG notebook
 
-
-# Notebooks 0.11.0 (TBD)
+# Notebooks 0.11.0 (11 Dec 2019)
+>>>>>>> origin/master
 
 ## New Features
 - PR #251 New cuML metrics and MBSGD classifier and regressor notebooks
