@@ -77,6 +77,13 @@ If you're using Conda, you can just `git clone https://github.com/rapidsai/noteb
 | Tutorials | [DBSCAN_demo_full](tutorials/DBSCAN_Demo_Full.ipynb)       | Demonstration of how to use DBSCAN - a popular clustering algorithm - and how to use the GPU accelerated implementation of this algorithm in RAPIDS.                                                                               |
 | Tutorials | [HoltWinters_demo_full](tutorials/holtwinters_demo_full.ipynb)   | Demonstration of how to use Holt-Winters, a time-series forecasting algorithm, on a dataset to make GPU accelerated out-of-sample predictions.      |
 
+### Cuxfilter Notebooks
+| Folder  | Notebook Title                                               | Description                                                  |
+| ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| cuxfilter| [Auto Accidents](cuxfilter/auto_accidents_example.ipynb)                        | Auto accidents dashboard using cudf-powered datashader                 |
+| cuxfilter| [Mortgage Data](cuxfilter/Mortgage_example.ipynb)                   | Interactive dashboard using deckgl polygon charts as the feature chart |
+| cuxfilter| [NYC Taxi](cuxfilter/NYC_taxi_example.ipynb) | NYC taxi dataset dashboard |
+
 ### Utils Scripts
 | Folder    | Script Title         | Description                                                                                                                                                                                                                   |
 |-----------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
