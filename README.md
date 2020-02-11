@@ -81,8 +81,6 @@ If you're using Conda, you can just `git clone https://github.com/rapidsai/noteb
 | Folder  | Notebook Title                                               | Description                                                  |
 | ------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | cuxfilter| [Auto Accidents](cuxfilter/auto_accidents_example.ipynb)                        | Auto accidents dashboard using cudf-powered datashader                 |
-| cuxfilter| [Mortgage Data](cuxfilter/Mortgage_example.ipynb)                   | Interactive dashboard using deckgl polygon charts as the feature chart |
-| cuxfilter| [NYC Taxi](cuxfilter/NYC_taxi_example.ipynb) | NYC taxi dataset dashboard |
 
 ### Utils Scripts
 | Folder    | Script Title         | Description                                                                                                                                                                                                                   |
