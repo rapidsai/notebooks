@@ -4,42 +4,46 @@ set -eu
 
 echo "PLEASE READ"
 echo "********************************************************************************************************"
-echo "Colab v0.11+ Migration Notice:"
+echo "Colab Notebooks Migration Notice:"
 echo " "
-echo "There has been a NECESSARY Colab script code change for VERSION 0.11+ that MAY REQUIRE an update how you install RAPIDS into Colab!  "
-echo "Not all Colab notebooks are updated (like personal Colabs) and while the script will install RAPIDS correctly, "
-echo "a neccessary script to update pyarrow to v0.15.x to be compatible with RAPIDS v0.11+ may not run, and your RAPIDS instance"
-echo "will BREAK"
+echo "We have changed the location of the colab script to our notebooks repo as Notebooks-Contrib is being "
+echo "transitioned to the GoAI repos.  We are also dropping support for versions below 0.11, as we are on 0.13 nightlies"
 echo " "
-echo "Please enter in the box your desired RAPIDS version (ex: '0.10' or '0.11', between 0.9 to 0.11, without the quotes) and hit Enter. "
+echo "Not all Colab notebooks are updated (like personal Colabs) and/or are using outdated versions of RAPIDS,"
+echo "so we HIGHLY encourage users to update their scripts and colab notebooks both with the new link AND with "
+echo "to the new API.  Otherwise, your code MAY BREAK"
+echo " "
+echo "Please enter in the box your desired RAPIDS version (ex: '0.11' or '0.12', between 0.11 to 0.13, without the quotes)"
+echo "and hit Enter. If you need stablity, use 0.12. If you want bleeding edge, use our nightlies (0.13), but things can break."
+echo " "
+echo "This notice will disappear/be updated on our next release."
 read RAPIDS_VERSION
 MULT="100"
 
 #conditions accidental inputs
 RAPIDS_RESULT=$(awk '{print $1*$2}' <<<"${RAPIDS_VERSION} ${MULT}")
 #echo $RAPIDS_RESULT
-if (( $RAPIDS_RESULT >=11 )) ;then
+if (( $RAPIDS_RESULT >=13 )) ;then
+  RAPIDS_VERSION="0.13"
+  RAPIDS_RESULT=13
+  echo "RAPIDS Version modified to 0.13 nightlies"
+elif (( $RAPIDS_RESULT <= 11 )) ;then
   RAPIDS_VERSION="0.11"
   RAPIDS_RESULT=11
-  # echo "RAPIDS Version modified to 0.12 nightlies"
   echo "RAPIDS Version modified to 0.11 stable"
-elif (( $RAPIDS_RESULT <= 9 )) ;then
-  RAPIDS_VERSION="0.9"
-  RAPIDS_RESULT=9
-  echo "RAPIDS Version modified to 0.9 stable"
 fi
 #echo $RAPIDS_VERSION
 if (( $RAPIDS_RESULT >= 11 )) ;then
   echo "Please COMPARE the \"SCRIPT TO COPY\" with the code in the above cell.  If they are the same, just type any key.  If not, do steps 2-4. "
   echo " "
   echo "SCRIPT TO COPY: "
-  echo "!wget -nc https://raw.githubusercontent.com/rapidsai/notebooks-contrib/master/utils/rapids-colab.sh"
+  echo "!wget -nc https://raw.githubusercontent.com/rapidsai/notebooks/master/utils/rapids-colab.sh"
   echo "!bash rapids-colab.sh"
   echo "import sys, os"
   echo "dist_package_index = sys.path.index\('/usr/local/lib/python3.6/dist-packages'\)"
   echo "sys.path = sys.path[:dist_package_index] + ['/usr/local/lib/python3.6/site-packages'] + sys.path[dist_package_index:]"
   echo "sys.path"
-  echo "if os.path.exists\('update_pyarrow.py'\): ## Only exists if RAPIDS version is 0.11 or higher"
+  echo "if os.path.exists\('update_pyarrow.py'\):"
   echo "  exec\(open\('update_pyarrow.py'\).read\(\), globals\(\)\)"
   echo "********************************************************************************************************"
   echo "Do you have the above version of the script running in your cell? (Y/N)"
@@ -53,13 +57,13 @@ if (( $RAPIDS_RESULT >= 11 )) ;then
     echo "3. RERUN the cell"
     echo " "
     echo "SCRIPT TO COPY:"
-    echo "!wget -nc https://raw.githubusercontent.com/rapidsai/notebooks-contrib/master/utils/rapids-colab.sh"
+    echo "!wget -nc https://raw.githubusercontent.com/rapidsai/notebooks/master/utils/rapids-colab.sh"
     echo "!bash rapids-colab.sh"
     echo "import sys, os"
     echo "dist_package_index = sys.path.index\('/usr/local/lib/python3.6/dist-packages'\)"
     echo "sys.path = sys.path[:dist_package_index] + ['/usr/local/lib/python3.6/site-packages'] + sys.path[dist_package_index:]"
     echo "sys.path"
-    echo "if os.path.exists\('update_pyarrow.py'\): ## Only exists if RAPIDS version is 0.11 or higher"
+    echo "if os.path.exists\('update_pyarrow.py'\):"
     echo "  exec\(open\('update_pyarrow.py'\).read\(\), globals\(\)\)"
     echo "********************************************************************************************************"
     rm rc2.sh
@@ -70,7 +74,7 @@ else
   echo "You may not have to change anything.  All versions of our script should work with this version of Colab"
 fi
 
-wget -nc https://github.com/rapidsai/notebooks-contrib/raw/master/utils/env-check.py
+wget -nc https://github.com/rapidsai/notebooks/raw/master/utils/env-check.py
 echo "Checking for GPU type:"
 python env-check.py
 
@@ -85,7 +89,7 @@ if [ ! -f Miniconda3-4.5.4-Linux-x86_64.sh ]; then
     chmod +x Miniconda3-4.5.4-Linux-x86_64.sh
     bash ./Miniconda3-4.5.4-Linux-x86_64.sh -b -f -p /usr/local
     
-    if (( $RAPIDS_RESULT == 12 )) ;then #Newest nightly packages.  UPDATE EACH RELEASE!
+    if (( $RAPIDS_RESULT == 13 )) ;then #Newest nightly packages.  UPDATE EACH RELEASE!
     echo "Installing RAPIDS $RAPIDS_VERSION packages from the nightly release channel"
     echo "Please standby, this will take a few minutes..."
     # install RAPIDS packages
@@ -95,8 +99,8 @@ if [ ! -f Miniconda3-4.5.4-Linux-x86_64.sh ]; then
                 cudf=$RAPIDS_VERSION cuml cugraph gcsfs pynvml cuspatial xgboost\
                 dask-cudf
         # check to make sure that pyarrow is running the right version (0.15) for v0.11 or later
-        wget -nc https://github.com/rapidsai/notebooks-contrib/raw/master/utils/update_pyarrow.py
-    elif (( $RAPIDS_RESULT >= 11 )) ;then #Stable packages requiring PyArrow 0.15
+        wget -nc https://github.com/rapidsai/notebooks/raw/master/utils/update_pyarrow.py
+    else #Stable packages requiring PyArrow 0.15
         echo "Installing RAPIDS $RAPIDS_VERSION packages from the stable release channel"
         echo "Please standby, this will take a few minutes..."
         # install RAPIDS packages
@@ -106,16 +110,7 @@ if [ ! -f Miniconda3-4.5.4-Linux-x86_64.sh ]; then
             cudf=$RAPIDS_VERSION cuml cugraph cuspatial gcsfs pynvml xgboost\
             dask-cudf
         # check to make sure that pyarrow is running the right version (0.15) for v0.11 or later
-        wget -nc https://github.com/rapidsai/notebooks-contrib/raw/master/utils/update_pyarrow.py
-    else
-        echo "Installing RAPIDS $RAPIDS_VERSION packages from the stable release channel"
-        echo "Please standby, this will take a few minutes..."
-        # install RAPIDS packages
-        conda install -y --prefix /usr/local \
-            -c rapidsai/label/xgboost -c rapidsai -c nvidia -c conda-forge \
-            python=3.6 cudatoolkit=10.0 \
-            cudf=$RAPIDS_VERSION cuml cugraph cuspatial gcsfs pynvml xgboost\
-            dask-cudf
+        wget -nc https://github.com/rapidsai/notebooks/raw/master/utils/update_pyarrow.py
     fi
       
     echo "Copying shared object files to /usr/lib"
