@@ -11,6 +11,7 @@
 
 ## New Features
 - PR #296 Add SVR notebook
+- PR #318 Add cuxfilter autoaccidents notebook
 
 ## Improvements
 - PR #310 Updates to BFS notebook and outputs
