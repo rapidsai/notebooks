@@ -15,6 +15,6 @@ These notebooks provide examples of how to use RAPIDS.  These notebooks are desi
 
 This repository serves as a convenience for our developers and users as a colocation of all RAPIDS notebooks.
 
-To get the latest notebook repo updates, run the update.sh script or use the following command:
+To get the latest notebook repo updates, run `./update.sh` or use the following command:
 
 `git submodule update --init --remote --no-single-branch --depth 1`
