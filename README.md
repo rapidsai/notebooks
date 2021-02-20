@@ -4,7 +4,7 @@
 - [cuGraph Notebooks](https://github.com/rapidsai/cugraph/tree/branch-0.17/notebooks)
 - [CLX Notebooks](https://github.com/rapidsai/clx/tree/branch-0.17/notebooks)
 - [cuSpatial Notebooks](https://github.com/rapidsai/cuspatial/tree/branch-0.17/notebooks)
-- [cuXfilter Notebooks](https://github.com/rapidsai/cuxfilter/tree/branch-0.17/notebooks)
+- [cuxfilter Notebooks](https://github.com/rapidsai/cuxfilter/tree/branch-0.17/notebooks)
 - [XGBoost Notebooks](https://github.com/rapidsai/xgboost-conda/tree/branch-0.17/notebooks)
 
 ## Intro
