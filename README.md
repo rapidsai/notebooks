@@ -1,11 +1,11 @@
 # RAPIDS Notebooks
 
-- [cuML Notebooks](https://github.com/rapidsai/cuml/tree/branch-0.13/notebooks)
-- [cuGraph Notebooks](https://github.com/rapidsai/cugraph/tree/branch-0.13/notebooks)
-- [CLX Notebooks](https://github.com/rapidsai/clx/tree/branch-0.13/notebooks)
-- [cuSpatial Notebooks](https://github.com/rapidsai/cuspatial/tree/branch-0.13/notebooks)
-- [cuXfilter Notebooks](https://github.com/rapidsai/cuxfilter/tree/branch-0.13/notebooks)
-- [XGBoost Notebooks](https://github.com/rapidsai/xgboost-conda/tree/branch-0.13/notebooks)
+- [cuML Notebooks](https://github.com/rapidsai/cuml/tree/branch-0.19/notebooks)
+- [cuGraph Notebooks](https://github.com/rapidsai/cugraph/tree/branch-0.19/notebooks)
+- [CLX Notebooks](https://github.com/rapidsai/clx/tree/branch-0.19/notebooks)
+- [cuSpatial Notebooks](https://github.com/rapidsai/cuspatial/tree/branch-0.19/notebooks)
+- [cuxfilter Notebooks](https://github.com/rapidsai/cuxfilter/tree/branch-0.19/notebooks)
+- [XGBoost Notebooks](https://github.com/rapidsai/xgboost-conda/tree/branch-0.19/notebooks)
 
 ## Intro
 
@@ -15,6 +15,6 @@ These notebooks provide examples of how to use RAPIDS.  These notebooks are desi
 
 This repository serves as a convenience for our developers and users as a colocation of all RAPIDS notebooks.
 
-To get the latest notebook updates, use the following command:
+To get the latest notebook repo updates, run `./update.sh` or use the following command:
 
-`git submodule update --init --remote`
+`git submodule update --init --remote --no-single-branch --depth 1`
