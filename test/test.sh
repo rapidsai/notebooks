@@ -1,9 +1,10 @@
 #!/bin/bash
+set -e
 
-RAPIDS_DIR=/rapids
-NBTEST=${RAPIDS_DIR}/utils/nbtest.sh
+THIS_DIR=$(dirname $(readlink -f "$0"))
+NBTEST=$(readlink -f "${THIS_DIR}/nbtest.sh")
+NOTEBOOKS_DIR=$(readlink -f "${THIS_DIR}/..")
 LIBCUDF_KERNEL_CACHE_PATH=${WORKSPACE}/.jitcache
-NOTEBOOKS_DIR=${RAPIDS_DIR}/notebooks
 
 # Add notebooks that should be skipped here
 # (space-separated list of filenames without paths)
@@ -15,52 +16,45 @@ env
 
 EXITCODE=0
 
-# Always run nbtest in NOTEBOOKS_DIR, set EXITCODE to failure if any run fails
-cd ${NOTEBOOKS_DIR}
+# Download cugraph datasets if they don't already exist
+(cd "${NOTEBOOKS_DIR}"/cugraph; ./cugraph_benchmarks/dataPrep.sh)
 
-# Special case: cugraph notebooks need specific datasets downloaded (this script
-# only downloads them if they do not exist, so it's safe to run multiple times)
-(cd cugraph; ./cugraph_benchmarks/dataPrep.sh)
 
-# Every repo is submoduled into "repos/<repo>" and notebooks have been stored
-# into a "notebooks" dir, this loop finds all notebooks specifically added to CI
-for nb in $(find repos/*/notebooks/* -name *.ipynb); do
-    nbBasename=$(basename ${nb})
-    # Output of find command looks like this: ./repos/<repo>/notebooks/<notebook> -name
-    # This grabs the <repo> element, skip CLX notebooks as they are not part of the runtime images yet
-    nbRepo=$(echo ${nb} | awk -F/ '{print $2}')
+for NB_PATH in $(find "${NOTEBOOKS_DIR}"/repos/*/notebooks/* -name *.ipynb); do
+    nbBaseName=$(basename "${NB_PATH}")
+    nbDirName=$(dirname "${NB_PATH}")
+
+    # Extracts <repo> (i.e. xgboost) from an absolute path like this:
+    # /rapids/notebooks/repos/xgboost/notebooks/XGBoost_Demo.ipynb
+    nbRepo=$(echo "${NB_PATH}" | sed -e "s|^$NOTEBOOKS_DIR/repos/||" -e "s|/notebooks.*$||")
 
     echo "========================================"
     echo "REPO: ${nbRepo}"
     echo "========================================"
 
     # Skip all NBs that use dask (in the code or even in their name)
-    if ((echo ${nb}|grep -qi dask) || \
-        (grep -q dask ${nb})); then
+    if echo "${NB_PATH}" | grep -qi dask || grep -q dask "${NB_PATH}"; then
         echo "--------------------------------------------------------------------------------"
-        echo "SKIPPING: ${nb} (suspected Dask usage, not currently automatable)"
+        echo "SKIPPING: ${NB_PATH} (suspected Dask usage, not currently automatable)"
         echo "--------------------------------------------------------------------------------"
-    elif (echo " ${SKIPNBS} " | grep -q " ${nbBasename} "); then
+    elif (echo " ${SKIPNBS} " | grep -q " ${nbBaseName} "); then
         echo "--------------------------------------------------------------------------------"
-        echo "SKIPPING: ${nb} (listed in skip list)"
+        echo "SKIPPING: ${NB_PATH} (listed in skip list)"
         echo "--------------------------------------------------------------------------------"
+    # Skip CLX notebooks since they are not part of the runtime images
     elif [[ ${nbRepo} == "clx" ]]; then
         echo "--------------------------------------------------------------------------------"
-        echo "SKIPPING: ${nb} (CLX notebook)"
+        echo "SKIPPING: ${NB_PATH} (CLX notebook)"
         echo "--------------------------------------------------------------------------------"
     else
-        # All notebooks are run from the directory in which they are contained.
-        # This makes operations that assume relative paths easiest to understand
-        # and maintain, since most users assume relative paths are relative to
-        # the location of the notebook itself. After a run, the CWD must be
-        # returned to NOTEBOOKS_DIR, since the find operation returned paths
-        # relative to that dir.
-        cd $(dirname ${nb})
+        # cd into notebooks directory to account for relative dataset paths
+        cd "${nbDirName}"
         nvidia-smi
-        ${NBTEST} ${nbBasename}
+        set +e
+        ${NBTEST} "${NB_PATH}"
         EXITCODE=$((EXITCODE | $?))
-        rm -rf ${LIBCUDF_KERNEL_CACHE_PATH}/*
-        cd ${NOTEBOOKS_DIR}
+        set -e
+        rm -rf "${LIBCUDF_KERNEL_CACHE_PATH}"/*
     fi
 done
 

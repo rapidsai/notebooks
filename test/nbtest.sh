@@ -22,28 +22,24 @@ get_ipython().run_cell_magic=my_run_cell_magic
 
 NO_COLORS=--colors=NoColor
 EXITCODE=0
+NB_PATH=$1
 
-for nb in $*; do
-    NBFILENAME=$1
-    NBNAME=${NBFILENAME%.*}
-    NBNAME=${NBNAME##*/}
-    NBTESTSCRIPT=$(mktemp --suffix=.py)
-    shift
+NBNAME=$(basename "${NB_PATH}" .ipynb)
+NBTESTSCRIPT=$(mktemp --suffix=.py)
 
-    echo --------------------------------------------------------------------------------
-    echo STARTING: ${NBNAME}
-    echo --------------------------------------------------------------------------------
-    echo "${MAGIC_OVERRIDE_CODE}" > "${NBTESTSCRIPT}"
-    jupyter nbconvert --to script "${NBFILENAME}" --stdout >> "${NBTESTSCRIPT}"
+echo "--------------------------------------------------------------------------------"
+echo "STARTING: ${NBNAME}"
+echo "--------------------------------------------------------------------------------"
+echo "${MAGIC_OVERRIDE_CODE}" > "${NBTESTSCRIPT}"
+jupyter nbconvert --to script "${NB_PATH}" --stdout >> "${NBTESTSCRIPT}"
 
-    echo "Running \"ipython ${NO_COLORS} ${NBTESTSCRIPT}\" on $(date)"
-    echo
-    time bash -c "ipython ${NO_COLORS} ${NBTESTSCRIPT}; EC=\$?; echo -------------------------------------------------------------------------------- ; echo DONE: ${NBNAME}; exit \$EC"
-    NBEXITCODE=$?
-    echo EXIT CODE: ${NBEXITCODE}
-    echo
-    EXITCODE=$((EXITCODE | ${NBEXITCODE}))
-    rm -f "${NBTESTSCRIPT}"
-done
+echo "Running \"ipython ${NO_COLORS} ${NBTESTSCRIPT}\" on $(date)"
+echo
+time bash -c "ipython ${NO_COLORS} ${NBTESTSCRIPT}; EC=\$?; echo -------------------------------------------------------------------------------- ; echo DONE: ${NBNAME}; exit \$EC"
+NBEXITCODE=$?
+echo "EXIT CODE: ${NBEXITCODE}"
+echo
+EXITCODE=$((EXITCODE | $NBEXITCODE))
+rm -f "${NBTESTSCRIPT}"
 
 exit ${EXITCODE}
