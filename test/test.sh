@@ -9,7 +9,7 @@ LIBCUDF_KERNEL_CACHE_PATH=${WORKSPACE}/.jitcache
 # Add notebooks that should be skipped here
 # (space-separated list of filenames without paths)
 SKIPNBS="cuml_benchmarks.ipynb uvm.ipynb bfs_benchmark.ipynb louvain_benchmark.ipynb pagerank_benchmark.ipynb sssp_benchmark.ipynb
-         release.ipynb nx_cugraph_bc_benchmarking.ipynb sdr_integration.ipynb sdr_wfm_demod.ipynb io_examples.ipynb E2E_Example.ipynb random_walk_perf.ipynb"
+         release.ipynb nx_cugraph_bc_benchmarking.ipynb sdr_integration.ipynb sdr_wfm_demod.ipynb io_examples.ipynb E2E_Example.ipynb random_walk_perf.ipynb ktruss.ipynb"
 
 ## Check env
 env
