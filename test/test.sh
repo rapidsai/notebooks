@@ -7,9 +7,23 @@ NOTEBOOKS_DIR=$(readlink -f "${THIS_DIR}/..")
 LIBCUDF_KERNEL_CACHE_PATH=${WORKSPACE}/.jitcache
 
 # Add notebooks that should be skipped here
-# (space-separated list of filenames without paths)
-SKIPNBS="cuml_benchmarks.ipynb uvm.ipynb bfs_benchmark.ipynb louvain_benchmark.ipynb pagerank_benchmark.ipynb sssp_benchmark.ipynb
-         release.ipynb nx_cugraph_bc_benchmarking.ipynb sdr_integration.ipynb sdr_wfm_demod.ipynb io_examples.ipynb E2E_Example.ipynb random_walk_perf.ipynb ktruss.ipynb"
+SKIPNBS=(
+    "cuml_benchmarks.ipynb"
+    "uvm.ipynb"
+    "bfs_benchmark.ipynb"
+    "louvain_benchmark.ipynb"
+    "pagerank_benchmark.ipynb"
+    "sssp_benchmark.ipynb"
+    "release.ipynb"
+    "nx_cugraph_bc_benchmarking.ipynb"
+    "sdr_integration.ipynb"
+    "sdr_wfm_demod.ipynb"
+    "io_examples.ipynb"
+    "E2E_Example.ipynb"
+    "random_walk_benchmark.ipynb"
+    "random_walk_perf.ipynb"
+    "ktruss.ipynb"
+)
 
 ## Check env
 env
@@ -37,7 +51,7 @@ for NB_PATH in $(find "${NOTEBOOKS_DIR}"/repos/*/notebooks/* -name *.ipynb); do
         echo "--------------------------------------------------------------------------------"
         echo "SKIPPING: ${NB_PATH} (suspected Dask usage, not currently automatable)"
         echo "--------------------------------------------------------------------------------"
-    elif (echo " ${SKIPNBS} " | grep -q " ${nbBaseName} "); then
+    elif [[ " ${SKIPNBS[*]} " =~ " ${nbBaseName} " ]]; then
         echo "--------------------------------------------------------------------------------"
         echo "SKIPPING: ${NB_PATH} (listed in skip list)"
         echo "--------------------------------------------------------------------------------"
