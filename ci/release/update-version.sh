@@ -29,5 +29,5 @@ function sed_runner() {
     sed -i.bak ''"$1"'' $2 && rm -f ${2}.bak
 }
 
-# cpp update
+# .gitmodules update
 sed_runner "s/= branch.*/= branch-${NEXT_FULL_TAG}/g" ../../.gitmodules
