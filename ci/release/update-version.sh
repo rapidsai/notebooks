@@ -1,6 +1,6 @@
 #!/bin/bash
 ########################
-# .gitmodules branch Updater #
+# .gitmodules Branch Updater #
 ########################
 
 ## Usage
@@ -30,4 +30,4 @@ function sed_runner() {
 }
 
 # .gitmodules update
-sed_runner "s/= branch.*/= branch-${NEXT_FULL_TAG}/g" ../../.gitmodules
+sed_runner "s/= branch.*/= branch-${NEXT_SHORT_TAG}/g" .gitmodules
