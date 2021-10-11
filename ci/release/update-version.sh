@@ -31,3 +31,4 @@ function sed_runner() {
 
 # .gitmodules update
 sed_runner "s/= branch.*/= branch-${NEXT_SHORT_TAG}/g" .gitmodules
+sed_runner "s|/branch.*/|/branch-${NEXT_SHORT_TAG}/|g" README.md
