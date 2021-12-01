@@ -18,6 +18,8 @@ SKIPNBS=(
     "nx_cugraph_bc_benchmarking.ipynb"
     "sdr_integration.ipynb"
     "sdr_wfm_demod.ipynb"
+    "online_signal_processing_tools.ipynb"
+    "rtlsdr_offline_demod_to_transcript.ipynb"
     "io_examples.ipynb"
     "E2E_Example.ipynb"
     "random_walk_benchmark.ipynb"
