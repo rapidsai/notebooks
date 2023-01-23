@@ -1,11 +1,11 @@
 # RAPIDS Notebooks
 
-- [cuML Notebooks](https://github.com/rapidsai/cuml/tree/branch-23.02/notebooks)
-- [cuGraph Notebooks](https://github.com/rapidsai/cugraph/tree/branch-23.02/notebooks)
-- [CLX Notebooks](https://github.com/rapidsai/clx/tree/branch-23.02/notebooks)
-- [cuSpatial Notebooks](https://github.com/rapidsai/cuspatial/tree/branch-23.02/notebooks)
-- [cuxfilter Notebooks](https://github.com/rapidsai/cuxfilter/tree/branch-23.02/notebooks)
-- [XGBoost Notebooks](https://github.com/rapidsai/xgboost-conda/tree/branch-23.02/notebooks)
+- [cuML Notebooks](https://github.com/rapidsai/cuml/tree/branch-23.04/notebooks)
+- [cuGraph Notebooks](https://github.com/rapidsai/cugraph/tree/branch-23.04/notebooks)
+- [CLX Notebooks](https://github.com/rapidsai/clx/tree/branch-23.04/notebooks)
+- [cuSpatial Notebooks](https://github.com/rapidsai/cuspatial/tree/branch-23.04/notebooks)
+- [cuxfilter Notebooks](https://github.com/rapidsai/cuxfilter/tree/branch-23.04/notebooks)
+- [XGBoost Notebooks](https://github.com/rapidsai/xgboost-conda/tree/branch-23.04/notebooks)
 
 ## Intro
 
