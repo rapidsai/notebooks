@@ -18,10 +18,6 @@
 	path = repos/cuspatial
 	url = https://github.com/rapidsai/cuspatial.git
 	branch = branch-23.04
-[submodule "clx"]
-	path = repos/clx
-	url = https://github.com/rapidsai/clx.git
-	branch = branch-23.04
 [submodule "cusignal"]
 	path = repos/cusignal
 	url = https://github.com/rapidsai/cusignal.git
