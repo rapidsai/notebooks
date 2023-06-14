@@ -1,28 +1,28 @@
 [submodule "cudf"]
 	path = repos/cudf
 	url = https://github.com/rapidsai/cudf.git
-	branch = branch-23.04
+	branch = branch-23.06
 [submodule "cuml"]
 	path = repos/cuml
 	url = https://github.com/rapidsai/cuml.git
-	branch = branch-23.04
+	branch = branch-23.06
 [submodule "cugraph"]
 	path = repos/cugraph
 	url = https://github.com/rapidsai/cugraph.git
-	branch = branch-23.04
+	branch = branch-23.06
 [submodule "cuxfilter"]
 	path = repos/cuxfilter
 	url = https://github.com/rapidsai/cuxfilter.git
-	branch = branch-23.04
+	branch = branch-23.06
 [submodule "cuspatial"]
 	path = repos/cuspatial
 	url = https://github.com/rapidsai/cuspatial.git
-	branch = branch-23.04
+	branch = branch-23.06
 [submodule "cusignal"]
 	path = repos/cusignal
 	url = https://github.com/rapidsai/cusignal.git
-	branch = branch-23.04
+	branch = branch-23.06
 [submodule "xgboost"]
 	path = repos/xgboost
 	url = https://github.com/rapidsai/xgboost-conda.git
-	branch = branch-23.04
+	branch = branch-23.06
