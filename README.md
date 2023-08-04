@@ -1,3 +1,9 @@
+# Archived
+
+This repository is no longer maintained. You can get notebooks in our docker images: https://hub.docker.com/r/rapidsai/notebooks
+
+Or check individual repos for their notebooks.
+
 # RAPIDS Notebooks
 
 - [cuML Notebooks](https://github.com/rapidsai/cuml/tree/branch-23.08/notebooks)
